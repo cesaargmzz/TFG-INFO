@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Data
+data/raw/
+data/interim/
+*.parquet
+*.csv
+
+# Notebooks cache
+.ipynb_checkpoints/
+
+# Config y entorno
+.env
