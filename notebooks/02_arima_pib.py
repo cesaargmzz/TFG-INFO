@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 # statsmodels (ARIMA)
 from statsmodels.tsa.arima.model import ARIMA
+from statsmodels.graphics.tsaplots import acf
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -48,6 +49,7 @@ for t in range(len(y_test)):
 
 arima_pred = pd.Series(arima_preds, index=y_test.index)
 arima_mae =  np.mean(np.abs(y_test - arima_pred))
+residuals = y_test - arima_pred
 print(f"MAE ARIMA{order} (test, walk-forward h=1): {arima_mae:.3f}")
 
 out_df = pd.DataFrame({
@@ -63,7 +65,7 @@ print(f"\nResultados guardados en {out_path}")
 plt.figure(figsize=(10, 5))
 plt.plot(out_df.index.astype(str), out_df["y_real"], marker="o", label="Real")
 plt.plot(out_df.index.astype(str), out_df["y_naive"], marker="o", label="Naive")
-plt.plot(out_df.index.astype(str), out_df["y_arima"], marker="o", label="ARIMA{order}")
+plt.plot(out_df.index.astype(str), out_df["y_arima"], marker="o", label="ARIMA")
 plt.title("PIB: Real vs Predicción (últimos 12 trimestres)")
 plt.xlabel("Trimestre")
 plt.ylabel("Variación del PIB (%)")
@@ -78,4 +80,38 @@ fig_path = fig_dir / "pib_arima_vs_naive.png"
 plt.savefig(fig_path, dpi=150)
 plt.show()
 
-print(f"Gráfico guardado en: {fig_path}")
+print(f"Gráfico Real vs Predicción guardado en: {fig_path}")
+
+plt.figure(figsize=(10, 5))
+plt.plot(residuals.index.astype(str), residuals, marker="o", label="Residuos")
+plt.title("Residuos")
+plt.xlabel("Trimestre")
+plt.ylabel("Residuos")
+plt.grid(True, alpha=0.3)
+plt.xticks(rotation=45, ha="right")
+plt.tight_layout()
+plt.legend()
+
+fig_dir.mkdir(parents=True, exist_ok=True)
+fig_path = fig_dir / "pib_arima_residuos.png"
+plt.savefig(fig_path, dpi=150)
+plt.show()
+
+print(f"Gráfico Residuos guardado en: {fig_path}")
+
+# ACF de los residuos
+acf_vals = acf(residuals.dropna(), nlags=12, fft=False)
+
+plt.figure(figsize=(10, 5))
+plt.stem(range(len(acf_vals)), acf_vals)
+plt.title("ACF de los residuos (ARIMA)")
+plt.xlabel("Lag")
+plt.ylabel("ACF")
+plt.grid(True, alpha=0.3)
+plt.tight_layout()
+
+fig_path = fig_dir / "pib_arima_residuos_acf.png"
+plt.savefig(fig_path, dpi=150)
+plt.show()
+
+print(f"Gráfico ACF guardado en: {fig_path}")
