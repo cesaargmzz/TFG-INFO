@@ -11,8 +11,6 @@ def _to_float_eu(x):
     s = str(x).strip()
     if s == "":
         return pd.NA
-    s = s.replace(".", "")
-    s = s.replace(",", ".")
 
     try:
         return float(s)
@@ -44,7 +42,14 @@ def main():
 
     long_df["period"] = pd.PeriodIndex(long_df["time"], freq="Q")
 
-    long_df["value"] = long_df["value_raw"].apply(_to_float_eu)
+    long_df["value"] = (
+        long_df["value_raw"]
+        .astype(str)
+        .str.replace(",", ".", regex=False)
+    )
+
+    long_df["value"] = pd.to_numeric(long_df["value"], errors="coerce")
+
     long_df = long_df.dropna(subset=["value"]).copy()
 
     long_df = long_df[["geo", "period", "value"]].sort_values(["geo", "period"]).reset_index(drop=True)
