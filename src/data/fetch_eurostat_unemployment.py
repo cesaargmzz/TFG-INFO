@@ -3,11 +3,12 @@ import requests
 import pandas as pd
 
 DATASET = "une_rt_q"
+GEO = "ES"  # cambia aquí el país
 
 url = (
     "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
     f"{DATASET}"
-    "?geo=ES"
+    f"?geo={GEO}"
     "&s_adj=SA"
     "&unit=PC_ACT"
     "&sex=T"
@@ -25,14 +26,26 @@ records = []
 for period, idx in time_index.items():
     key = str(idx)
     if key in values and values[key] is not None:
-        records.append({"period": period, "unemployment_rate": float(values[key])})
+        records.append({
+            "geo": GEO,
+            "period": period,
+            "unemployment_rate": float(values[key])
+        })
 
-df = pd.DataFrame(records).sort_values("period").reset_index(drop=True)
-df["period"] = pd.PeriodIndex(df["period"], freq="Q")
+df_new = pd.DataFrame(records).sort_values("period").reset_index(drop=True)
+df_new["period"] = pd.PeriodIndex(df_new["period"], freq="Q")
 
-# Guardar en raw
-out_path = Path("../../data/raw/unemployment_es_api.parquet")
+out_path = Path("../../data/raw/unemployment_api.parquet")
 out_path.parent.mkdir(parents=True, exist_ok=True)
+
+# Si ya existe, concatenamos
+if out_path.exists():
+    df_existing = pd.read_parquet(out_path)
+    df = pd.concat([df_existing, df_new], ignore_index=True)
+    df = df.drop_duplicates(subset=["geo", "period"]).sort_values(["geo", "period"])
+else:
+    df = df_new
+
 df.to_parquet(out_path, index=False)
 
 print("Guardado en:", out_path.resolve())
