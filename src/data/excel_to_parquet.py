@@ -57,7 +57,7 @@ def main():
     OUT_PARQUET.parent.mkdir(parents=True, exist_ok=True)
     long_df.to_parquet(OUT_PARQUET, index=False)
 
-    print("✅ Parquet creado:", OUT_PARQUET.as_posix())
+    print("Parquet creado:", OUT_PARQUET.as_posix())
     print("Filas:", len(long_df), "| Geos:", long_df["geo"].nunique(),
           "| Desde:", long_df["period"].min(), "| Hasta:", long_df["period"].max())
 
