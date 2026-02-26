@@ -1,0 +1,2 @@
+geo,train_start,train_end,test_start,test_end,test_horizon,naive_mae,naive_rmse,arima_order,arima_mae,arima_rmse
+Spain,1995Q2,2024Q4,2025Q1,2025Q4,4,1.8580000000000076,2.0962610762975182,"(1, 1, 0)",1.9560980144324276,2.182202943984509
