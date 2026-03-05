@@ -1,43 +1,62 @@
 import requests
 import pandas as pd
 from pathlib import Path
+import argparse
 
 # Dataset PIB trimestral
 DATASET = "namq_10_gdp"
 
-out_path = Path("../../data/raw/gdp_spain_api.parquet")
-out_path.parent.mkdir(parents=True, exist_ok=True)
+def fetch_gdp_for_geo(geo: str) -> pd.DataFrame:
+    url = (
+        f"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
+        f"{DATASET}"
+        f"?geo={geo}"
+        f"&na_item=B1GQ"
+        f"&unit=CLV10_MEUR"
+        f"&s_adj=SCA"
+    )
 
-url = (
-    f"https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
-    f"{DATASET}"
-    "?geo=ES"
-    "&na_item=B1GQ"
-    "&unit=CLV10_MEUR"
-    "&s_adj=SCA"
-)
+    response = requests.get(url, timeout=60)
+    response.raise_for_status()
+    data = response.json()
 
-response = requests.get(url)
-data = response.json()
+    values = data.get("value", {})
+    time_index = data["dimension"]["time"]["category"]["index"]
 
-# Extraer valores
-values = data["value"]
-time_index = data["dimension"]["time"]["category"]["index"]
+    records = []
+    for period, idx in time_index.items():
+        if str(idx) in values:
+            records.append({
+                "geo": geo,
+                "period": period,
+                "value": values[str(idx)]
+            })
 
-records = []
+    df = pd.DataFrame(records).sort_values("period")
+    df["period"] = pd.PeriodIndex(df["period"], freq="Q")
+    return df
 
-for period, idx in time_index.items():
-    if str(idx) in values:
-        records.append({
-            "period": period,
-            "value": values[str(idx)]
-        })
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--geos", nargs="+", default=["ES", "IT", "FR"], help="Lista de países (geo), ej: ES IT FR")
+    ap.add_argument("--out", default="../../data/raw/gdp_eurostat_api.parquet", help="Ruta de salida parquet")
+    args = ap.parse_args()
 
-df = pd.DataFrame(records).sort_values("period")
-df["period"] = pd.PeriodIndex(df["period"], freq="Q")
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
 
-df.to_parquet(out_path, index=False)
+    frames = []
+    for geo in args.geos:
+        frames.append(fetch_gdp_for_geo(geo))
 
-print("Guardado en:", out_path.resolve())
+    df = pd.concat(frames, ignore_index=True)
+    df = df.sort_values(["geo", "period"])
 
-print(df.tail(12))
+    df.to_parquet(out_path, index=False)
+
+    print("Guardado en:", out_path.resolve())
+    print("Geos:", sorted(df["geo"].unique()))
+    print(df.groupby("geo").tail(3))
+
+if __name__ == "__main__":
+    main()

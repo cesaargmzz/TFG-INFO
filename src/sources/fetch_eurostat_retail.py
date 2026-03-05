@@ -1,37 +1,25 @@
 from pathlib import Path
+import argparse
 import requests
 import pandas as pd
 
-# Eurostat dataset: Turnover and volume of sales in wholesale and retail trade - monthly data
-# Online data code: sts_trtu_m
 DATASET = "sts_trtu_m"
-
-# Objetivo: serie de "retail trade volume index" (volumen) para ES.
-# Dimensiones típicas incluyen:
-# - s_adj (ajuste estacional)
-# - unit (índice base)
-# - nace_r2 (actividad)
-# - indic_bt o similar (según dataset)
-#
-# Si te falla (400), empieza quitando nace_r2 o ajustando unit/s_adj.
-
-GEO = "ES"
-PARAMS = {
-    "geo": GEO,
-    "s_adj": "SCA",
-    "unit": "I21",
-    # Total retail trade (aprox.). Si falla, prueba con "G47" o elimina este filtro.
-    "nace_r2": "G47",
-}
 
 BASE_URL = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data"
 
-OUT_PATH = Path("../../data/raw/retail_es_api.parquet")
 
+def fetch_retail_for_geo(geo: str):
 
-def main():
+    params = {
+        "geo": geo,
+        "s_adj": "SCA",
+        "unit": "I21",
+        "nace_r2": "G47",
+    }
+
     url = f"{BASE_URL}/{DATASET}"
-    resp = requests.get(url, params=PARAMS, timeout=60)
+
+    resp = requests.get(url, params=params, timeout=60)
     resp.raise_for_status()
     data = resp.json()
 
@@ -39,21 +27,47 @@ def main():
     time_index = data["dimension"]["time"]["category"]["index"]
 
     records = []
+
     for period, idx in time_index.items():
         key = str(idx)
-        v = values.get(key, None)
+        v = values.get(key)
+
         if v is not None:
-            records.append({"period": period, "retail_index": float(v)})
+            records.append({
+                "geo": geo,
+                "period": period,
+                "retail_index": float(v)
+            })
 
     df = pd.DataFrame(records).sort_values("period").reset_index(drop=True)
+
     df["period"] = pd.PeriodIndex(df["period"], freq="M")
-    df["geo"] = GEO
 
-    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(OUT_PATH, index=False)
+    return df
 
-    print("Guardado en:", OUT_PATH.resolve())
-    print(df.tail(12).to_string(index=False))
+
+def main():
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--geos", nargs="+", default=["ES", "IT", "FR"])
+    ap.add_argument("--out", default="../../data/raw/retail_api.parquet")
+
+    args = ap.parse_args()
+
+    frames = [fetch_retail_for_geo(g) for g in args.geos]
+
+    df = pd.concat(frames, ignore_index=True)
+
+    df = df.sort_values(["geo", "period"])
+
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    df.to_parquet(out_path, index=False)
+
+    print("Guardado en:", out_path.resolve())
+    print("Geos:", sorted(df["geo"].unique()))
+    print(df.groupby("geo").tail(6))
 
 
 if __name__ == "__main__":

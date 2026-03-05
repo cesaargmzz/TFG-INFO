@@ -1,40 +1,47 @@
 from pathlib import Path
 import pandas as pd
 
-RAW_PATH = Path("../../data/raw/ipi_es_api.parquet")
-OUT_PATH = Path("../../data/processed/ipi_qoq.parquet")
+RAW_PATH = Path("../../data/raw/ipi_api.parquet")
+OUT_PATH = Path("../../data/processed/ipi_qoq_panel.parquet")
 
 
 def main():
+
     df = pd.read_parquet(RAW_PATH).sort_values(["geo", "period"]).reset_index(drop=True)
 
-    # Asegurar Period mensual
+    # asegurar period mensual
     df["period"] = pd.PeriodIndex(df["period"], freq="M")
 
-    # Trimestre
+    # convertir a trimestre
     df["quarter"] = df["period"].dt.to_timestamp().dt.to_period("Q")
 
-    # Media trimestral del índice
+    # media trimestral
     q = (
         df.groupby(["geo", "quarter"])["ipi_index"]
-          .mean()
-          .reset_index()
-          .rename(columns={"quarter": "period", "ipi_index": "ipi_q_avg"})
-          .sort_values(["geo", "period"])
-          .reset_index(drop=True)
+        .mean()
+        .reset_index()
+        .rename(columns={
+            "quarter": "period",
+            "ipi_index": "ipi_q_avg"
+        })
+        .sort_values(["geo", "period"])
+        .reset_index(drop=True)
     )
 
-    # Variación trimestral (%) del índice trimestral
+    # variación trimestral %
     q["ipi_qoq_pct"] = q.groupby("geo")["ipi_q_avg"].pct_change() * 100
 
-    # Limpiar
+    # lag
+    q["ipi_qoq_pct_l1"] = q.groupby("geo")["ipi_qoq_pct"].shift(1)
+
     q = q.dropna(subset=["ipi_qoq_pct"]).reset_index(drop=True)
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     q.to_parquet(OUT_PATH, index=False)
 
     print("Guardado en:", OUT_PATH.resolve())
-    print(q.tail(8).to_string(index=False))
+    print("Geos:", sorted(q["geo"].unique()))
+    print(q.groupby("geo").tail(3).to_string(index=False))
 
 
 if __name__ == "__main__":

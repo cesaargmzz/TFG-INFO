@@ -1,40 +1,26 @@
 from pathlib import Path
+import argparse
 import requests
 import pandas as pd
 
-# Eurostat dataset: Production in industry - monthly data
-# Online data code: sts_inpr_m
 DATASET = "sts_inpr_m"
-
-# Parámetros típicos:
-# - indic_bt=PRD (production)
-# - s_adj=SCA (seasonally and calendar adjusted)
-# - unit=I21 (Index, 2021=100)
-# - nace_r2=B-D (Industry excluding construction)  -> si falla, cambia a "B-E" o prueba sin nace_r2
-#
-# OJO: Eurostat a veces cambia códigos disponibles por dimensión.
-# Si te da 400, prueba:
-#  - quitar nace_r2
-#  - cambiar s_adj (ej. "SA", "NSA")
-#  - cambiar unit (ej. "I15", etc.)
-
-GEO = "ES"
-PARAMS = {
-    "geo": GEO,
-    "indic_bt": "PRD",
-    "s_adj": "SCA",
-    "unit": "I21",
-    "nace_r2": "B-D",
-}
 
 BASE_URL = "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data"
 
-OUT_PATH = Path("../../data/raw/ipi_es_api.parquet")
 
+def fetch_ipi_for_geo(geo: str):
 
-def main():
+    params = {
+        "geo": geo,
+        "indic_bt": "PRD",
+        "s_adj": "SCA",
+        "unit": "I21",
+        "nace_r2": "B-D",
+    }
+
     url = f"{BASE_URL}/{DATASET}"
-    resp = requests.get(url, params=PARAMS, timeout=60)
+
+    resp = requests.get(url, params=params, timeout=60)
     resp.raise_for_status()
     data = resp.json()
 
@@ -42,21 +28,47 @@ def main():
     time_index = data["dimension"]["time"]["category"]["index"]
 
     records = []
+
     for period, idx in time_index.items():
         key = str(idx)
-        v = values.get(key, None)
+        v = values.get(key)
+
         if v is not None:
-            records.append({"period": period, "ipi_index": float(v)})
+            records.append({
+                "geo": geo,
+                "period": period,
+                "ipi_index": float(v)
+            })
 
     df = pd.DataFrame(records).sort_values("period").reset_index(drop=True)
+
     df["period"] = pd.PeriodIndex(df["period"], freq="M")
-    df["geo"] = GEO
 
-    OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    df.to_parquet(OUT_PATH, index=False)
+    return df
 
-    print("Guardado en:", OUT_PATH.resolve())
-    print(df.tail(12).to_string(index=False))
+
+def main():
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--geos", nargs="+", default=["ES", "IT", "FR"])
+    ap.add_argument("--out", default="../../data/raw/ipi_api.parquet")
+
+    args = ap.parse_args()
+
+    frames = [fetch_ipi_for_geo(g) for g in args.geos]
+
+    df = pd.concat(frames, ignore_index=True)
+
+    df = df.sort_values(["geo", "period"])
+
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    df.to_parquet(out_path, index=False)
+
+    print("Guardado en:", out_path.resolve())
+    print("Geos:", sorted(df["geo"].unique()))
+    print(df.groupby("geo").tail(6))
 
 
 if __name__ == "__main__":

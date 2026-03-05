@@ -1,41 +1,66 @@
 from pathlib import Path
+import argparse
 import requests
 import pandas as pd
 
 DATASET = "prc_hicp_midx"
 
-url = (
-    "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
-    f"{DATASET}"
-    "?geo=ES"
-    "&coicop=CP00"
-    "&unit=I15"
-)
+def fetch_inflation_for_geo(geo: str) -> pd.DataFrame:
 
-resp = requests.get(url, timeout=60)
-resp.raise_for_status()
-data = resp.json()
+    url = (
+        "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
+        f"{DATASET}"
+        f"?geo={geo}"
+        "&coicop=CP00"
+        "&unit=I15"
+    )
 
-values = data.get("value", {})
-time_index = data["dimension"]["time"]["category"]["index"]
+    resp = requests.get(url, timeout=60)
+    resp.raise_for_status()
+    data = resp.json()
 
-records = []
-for period, idx in time_index.items():
-    key = str(idx)
-    if key in values and values[key] is not None:
-        records.append({
-            "period": period,
-            "hicp_index": float(values[key])
-        })
+    values = data.get("value", {})
+    time_index = data["dimension"]["time"]["category"]["index"]
 
-df = pd.DataFrame(records).sort_values("period").reset_index(drop=True)
+    records = []
+    for period, idx in time_index.items():
+        key = str(idx)
+        if key in values and values[key] is not None:
+            records.append({
+                "geo": geo,
+                "period": period,
+                "hicp_index": float(values[key])
+            })
 
-# Period mensual
-df["period"] = pd.PeriodIndex(df["period"], freq="M")
+    df = pd.DataFrame(records).sort_values("period").reset_index(drop=True)
 
-out_path = Path("../../data/raw/inflation_es_api.parquet")
-out_path.parent.mkdir(parents=True, exist_ok=True)
-df.to_parquet(out_path, index=False)
+    # Period mensual
+    df["period"] = pd.PeriodIndex(df["period"], freq="M")
 
-print("Guardado en:", out_path.resolve())
-print(df.tail(12))
+    return df
+
+
+def main():
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--geos", nargs="+", default=["ES", "IT", "FR"])
+    ap.add_argument("--out", default="../../data/raw/inflation_api.parquet")
+    args = ap.parse_args()
+
+    frames = [fetch_inflation_for_geo(g) for g in args.geos]
+
+    df = pd.concat(frames, ignore_index=True)
+    df = df.sort_values(["geo", "period"])
+
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    df.to_parquet(out_path, index=False)
+
+    print("Guardado en:", out_path.resolve())
+    print("Geos:", sorted(df["geo"].unique()))
+    print(df.groupby("geo").tail(6))
+
+
+if __name__ == "__main__":
+    main()
