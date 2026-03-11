@@ -8,14 +8,9 @@ REPO_ROOT = Path(__file__).resolve().parents[3]  # src/app/streamlit/app.py -> r
 REPORTS_DIR = REPO_ROOT / "reports"
 FIGURES_DIR = REPORTS_DIR / "figures"
 
-METRICS_PATH = REPORTS_DIR / "metrics_xgboost_es_compare.csv"
-PRED_BASE_PATH = REPORTS_DIR / "predictions_xgboost_base.csv"
-PRED_EXT_PATH = REPORTS_DIR / "predictions_xgboost_ext.csv"
+GEO_LABELS = {"ES": "España", "FR": "Francia", "IT": "Italia"}
 
-st.set_page_config(page_title="TFG Dashboard — PIB QoQ (España)", layout="wide")
-
-st.title("Dashboard — Predicción del PIB QoQ (España)")
-st.caption("MVP: visualización interactiva de resultados de modelos (CSV generados por el pipeline).")
+st.set_page_config(page_title="TFG Dashboard — PIB QoQ", layout="wide")
 
 # --- Helpers ---
 def load_csv(path: Path) -> pd.DataFrame:
@@ -25,29 +20,40 @@ def load_csv(path: Path) -> pd.DataFrame:
     return pd.read_csv(path)
 
 def safe_period_str(df: pd.DataFrame) -> pd.DataFrame:
-    # Asegura que period sea string para plotly
     if "period" in df.columns:
         df["period"] = df["period"].astype(str)
     return df
 
-# --- Load data ---
-metrics = load_csv(METRICS_PATH)
-pred_base = safe_period_str(load_csv(PRED_BASE_PATH))
-pred_ext = safe_period_str(load_csv(PRED_EXT_PATH))
-
 # --- Sidebar controls ---
 st.sidebar.header("Controles")
+
+geo = st.sidebar.selectbox("País", list(GEO_LABELS.keys()),
+                            format_func=lambda g: f"{g} — {GEO_LABELS[g]}", index=0)
 
 model_options = {
     "XGBoost (base)": "base",
     "XGBoost (ampliado)": "ext",
 }
-
 model_label = st.sidebar.selectbox("Modelo", list(model_options.keys()), index=0)
 model_key = model_options[model_label]
 
 show_tables = st.sidebar.checkbox("Mostrar tablas", value=True)
 show_figures_folder = st.sidebar.checkbox("Mostrar carpeta de figuras (PNG)", value=False)
+
+# --- Dynamic paths ---
+geo_lower = geo.lower()
+metrics_path  = REPORTS_DIR / f"metrics_xgboost_{geo_lower}_compare.csv"
+pred_base_path = REPORTS_DIR / f"predictions_xgboost_base_{geo_lower}.csv"
+pred_ext_path  = REPORTS_DIR / f"predictions_xgboost_ext_{geo_lower}.csv"
+
+# --- Load data ---
+metrics   = load_csv(metrics_path)
+pred_base = safe_period_str(load_csv(pred_base_path))
+pred_ext  = safe_period_str(load_csv(pred_ext_path))
+
+# --- Title (dynamic) ---
+st.title(f"Dashboard — Predicción del PIB QoQ · {geo} ({GEO_LABELS[geo]})")
+st.caption("Visualización interactiva de resultados de modelos (CSV generados por el pipeline).")
 
 # --- Select predictions ---
 if model_key == "base":
@@ -57,19 +63,18 @@ else:
     preds = pred_ext.copy()
     metrics_row = metrics[metrics["model"].str.contains("ext", case=False, na=False)]
 
-# Fallback si el nombre exacto no coincide
 if metrics_row.empty:
     metrics_row = metrics.head(1)
 
-mae = float(metrics_row["mae"].iloc[0]) if "mae" in metrics_row.columns else None
-rmse = float(metrics_row["rmse"].iloc[0]) if "rmse" in metrics_row.columns else None
-n_features = int(metrics_row["n_features"].iloc[0]) if "n_features" in metrics_row.columns else None
+mae_val      = float(metrics_row["mae"].iloc[0])      if "mae"        in metrics_row.columns else None
+rmse_val     = float(metrics_row["rmse"].iloc[0])     if "rmse"       in metrics_row.columns else None
+n_features   = int(metrics_row["n_features"].iloc[0]) if "n_features" in metrics_row.columns else None
 
 # --- KPIs ---
 kpi1, kpi2, kpi3 = st.columns(3)
 kpi1.metric("Modelo", model_label)
-kpi2.metric("MAE (p.p.)", f"{mae:.3f}" if mae is not None else "—")
-kpi3.metric("RMSE (p.p.)", f"{rmse:.3f}" if rmse is not None else "—")
+kpi2.metric("MAE (p.p.)", f"{mae_val:.3f}"  if mae_val  is not None else "—")
+kpi3.metric("RMSE (p.p.)", f"{rmse_val:.3f}" if rmse_val is not None else "—")
 
 if n_features is not None:
     st.caption(f"Nº de variables: {n_features}")
@@ -77,7 +82,6 @@ if n_features is not None:
 st.divider()
 
 # --- Plots ---
-# Real vs Pred
 col1, col2 = st.columns(2)
 
 with col1:
@@ -119,13 +123,13 @@ if show_tables:
     st.subheader("Métricas (comparativa)")
     st.dataframe(metrics, use_container_width=True)
 
-# --- Optional: show generated PNGs ---
+# --- Optional: show generated PNGs filtered by country ---
 if show_figures_folder:
-    st.subheader("Figuras generadas (reports/figures)")
+    st.subheader(f"Figuras generadas — {geo} (reports/figures)")
     if FIGURES_DIR.exists():
-        pngs = sorted(FIGURES_DIR.glob("*.png"))
+        pngs = sorted(FIGURES_DIR.glob(f"*_{geo_lower}_*.png"))
         if not pngs:
-            st.info("No hay PNGs en reports/figures")
+            st.info(f"No hay PNGs para {geo} en reports/figures")
         else:
             for p in pngs:
                 st.write(p.name)
@@ -133,4 +137,4 @@ if show_figures_folder:
     else:
         st.info("No existe la carpeta reports/figures")
 
-st.caption("TFG_INFO — Dashboard MVP (Streamlit).")
+st.caption("TFG_INFO — Dashboard (Streamlit).")
