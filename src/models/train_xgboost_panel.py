@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 DATA_PATH = Path("../../data/processed/dataset_panel_v1.parquet")
 
 OUT_DIR = Path("../../reports")
-FIG_DIR = OUT_DIR / "figures"
+FIG_DIR = OUT_DIR / "figures" / "bloque0"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
