@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plantilla TFG/TFM
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Herramientas y materiales}
+\label{herramientas}
+
+\section{Obtención de datos macroeconómicos}
+
+Los datos utilizados en este trabajo proceden principalmente de la base estadística de Eurostat, el organismo encargado de recopilar y publicar información estadística oficial para los países de la Unión Europea. Eurostat proporciona una amplia variedad de indicadores macroeconómicos con una periodicidad homogénea y metodologías de cálculo estandarizadas, lo que permite realizar comparaciones consistentes entre distintos países.
+
+Con el objetivo de garantizar la reproducibilidad del proceso de obtención de datos, se optó por utilizar la API oficial de Eurostat en lugar de recurrir a descargas manuales de archivos. Este enfoque permite automatizar completamente la extracción de información, reduciendo posibles errores asociados a la manipulación manual de hojas de cálculo y facilitando la actualización de los datos cuando se publican nuevas observaciones.
+
+La utilización de la API también permite estructurar el proceso de descarga de forma programática, de modo que el mismo procedimiento puede aplicarse a distintos países o indicadores sin necesidad de modificar manualmente los conjuntos de datos utilizados.
+
+\section{Indicadores económicos utilizados}
+
+Para el desarrollo de los experimentos se han seleccionado varios indicadores macroeconómicos que pueden actuar como variables explicativas de la evolución del Producto Interior Bruto. En concreto, se han considerado las siguientes variables:
+
+\begin{itemize}
+    \item Producto Interior Bruto real trimestral.
+    \item Tasa de desempleo.
+    \item Índice de producción industrial.
+    \item Índice de ventas minoristas.
+    \item Índice armonizado de precios al consumo (inflación).
+\end{itemize}
+
+Estos indicadores han sido ampliamente utilizados en la literatura económica para analizar la evolución del ciclo económico y estudiar la relación entre distintos componentes de la actividad económica.
+
+En todos los casos, los datos se han transformado para trabajar con variaciones trimestrales, lo que permite capturar de forma más directa la dinámica del crecimiento económico.
+
+\section{Proceso de construcción del dataset}
+
+Una vez obtenidos los datos desde Eurostat, se ha desarrollado un proceso de transformación orientado a construir un conjunto de datos estructurado que pueda utilizarse directamente para el entrenamiento de modelos de predicción.
+
+Este proceso incluye varias etapas:
+
+\begin{itemize}
+    \item Limpieza y normalización de los datos descargados.
+    \item Conversión de las series a variaciones trimestrales.
+    \item Alineación temporal de los distintos indicadores.
+    \item Integración de las variables en un único conjunto de datos.
+\end{itemize}
+
+El resultado final es un dataset estructurado en formato tabular donde cada fila corresponde a una observación temporal y cada columna representa una variable económica. Esta estructura facilita el uso de modelos de aprendizaje automático que requieren datos organizados en forma de matriz de características.
+
+\section{Formato de almacenamiento}
+
+Los datos procesados se almacenan utilizando el formato columnar \textit{Parquet}. Este formato ha sido diseñado específicamente para el almacenamiento eficiente de datos tabulares y presenta diversas ventajas frente a otros formatos tradicionales como CSV o Excel.
+
+Entre sus principales ventajas se encuentran:
+
+\begin{itemize}
+    \item Mayor eficiencia en operaciones de lectura y escritura.
+    \item Mejor compresión de datos.
+    \item Optimización para análisis de grandes tablas de datos.
+    \item Integración directa con herramientas de análisis de datos.
+\end{itemize}
+
+Estas características lo convierten en una opción adecuada para proyectos de análisis de datos que requieren manipular series temporales económicas de forma eficiente.
+
+\section{Arquitectura de datos}
+
+El sistema de datos se ha diseñado siguiendo una arquitectura modular que separa las distintas etapas del procesamiento de información. En primer lugar, cada indicador económico se descarga y almacena de forma independiente. Posteriormente, las distintas variables se combinan para construir un dataset final que integra toda la información necesaria para el entrenamiento de los modelos.
+
+Cada observación del dataset incluye:
+
+\begin{itemize}
+    \item Un identificador temporal (\texttt{period}) que representa el trimestre correspondiente.
+    \item Un identificador geográfico (\texttt{geo}) que permite distinguir entre distintos países.
+    \item Las variables económicas utilizadas como características del modelo.
+\end{itemize}
+
+Esta estructura permite representar los datos en forma de panel, lo que facilita la ampliación del sistema a múltiples países sin necesidad de modificar el proceso de construcción del dataset. De este modo, la arquitectura diseñada resulta escalable y adaptable a futuros experimentos que incorporen nuevas economías o indicadores adicionales.

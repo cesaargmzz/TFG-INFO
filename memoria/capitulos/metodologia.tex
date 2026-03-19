@@ -1,0 +1,173 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plantilla TFG/TFM
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Metodología}
+\label{metodologia}
+
+En este apartado se describe el proceso seguido para la construcción del sistema de modelización del crecimiento trimestral del PIB. La metodología adoptada se ha diseñado con un enfoque reproducible, modular y escalable, permitiendo la incorporación futura de nuevos países y variables sin necesidad de rediseñar el pipeline completo.
+
+\section{Fuentes de datos}
+
+Los datos utilizados en este trabajo proceden principalmente de la base estadística de Eurostat, el organismo encargado de recopilar y publicar información estadística oficial para los países de la Unión Europea. Eurostat proporciona una amplia variedad de indicadores macroeconómicos con una periodicidad homogénea y metodologías de cálculo estandarizadas, lo que permite realizar comparaciones consistentes entre distintos países.
+
+Con el objetivo de garantizar la reproducibilidad del proceso de obtención de datos, se optó por utilizar la API oficial de Eurostat en lugar de recurrir a descargas manuales de archivos. Este enfoque permite automatizar completamente la extracción de información, reduciendo posibles errores asociados a la manipulación manual de hojas de cálculo y facilitando la actualización de los datos cuando se publican nuevas observaciones.
+
+\section{Indicadores económicos utilizados}
+
+Para el desarrollo de los experimentos se han seleccionado cinco indicadores macroeconómicos obtenidos de la API de Eurostat. La Tabla~\ref{tab:fuentes} recoge, para cada uno, el código de dataset utilizado en la consulta, la especificación técnica relevante y la periodicidad original de los datos.
+
+\begin{table}[H]
+\centering
+\caption{Indicadores macroeconómicos utilizados y sus fuentes en Eurostat}
+\label{tab:fuentes}
+\small
+\begin{tabular}{p{2.8cm} p{3cm} p{6.5cm} p{1.8cm}}
+\hline
+\textbf{Indicador} & \textbf{Dataset Eurostat} & \textbf{Especificación} & \textbf{Period.} \\
+\hline
+PIB real              & \texttt{namq\_10\_gdp}   & Ajustado estacionalmente, millones EUR encadenados (base 2010) & Trimestral \\[4pt]
+Tasa de desempleo     & \texttt{une\_rt\_q}      & Ajustada estacionalmente, \% población activa (15--74 años)    & Trimestral \\[4pt]
+Inflación (HICP)      & \texttt{prc\_hicp\_midx} & Todos los componentes (\texttt{CP00}), índice base 2015        & Mensual    \\[4pt]
+Prod.\ industrial     & \texttt{sts\_inpr\_m}    & Ajustado estacional y calendario, índice base 2021, sector B-D & Mensual    \\[4pt]
+Ventas minoristas     & \texttt{sts\_trtu\_m}    & Ajustado estacional y calendario, índice base 2021, sector G47 & Mensual    \\
+\hline
+\end{tabular}
+\end{table}
+
+Los tres últimos indicadores se publican con periodicidad mensual y se agregan a frecuencia trimestral mediante la media aritmética de los tres meses de cada trimestre antes de incorporarlos al dataset. Los dos primeros son directamente trimestrales.
+
+Estos indicadores han sido ampliamente utilizados en la literatura económica para analizar la evolución del ciclo económico: el desempleo y la inflación capturan la situación del mercado de trabajo y los precios, mientras que la producción industrial y las ventas minoristas son indicadores adelantados de la actividad real que suelen publicarse antes de la estimación oficial del PIB.
+
+\section{Construcción del dataset}
+
+Una vez obtenidos los datos desde Eurostat, se ha desarrollado un proceso de transformación orientado a construir un conjunto de datos estructurado que pueda utilizarse directamente para el entrenamiento de modelos de predicción.
+
+Este proceso incluye varias etapas:
+
+\begin{itemize}
+    \item Limpieza y normalización de los datos descargados.
+    \item Conversión a variaciones trimestrales de las series expresadas en niveles o índices
+          (PIB, inflación, IPI, comercio minorista). La tasa de desempleo, al ser ya un
+          porcentaje interpretable directamente, se utiliza sin transformación adicional.
+    \item Alineación temporal de los distintos indicadores.
+    \item Integración de las variables en un único conjunto de datos.
+\end{itemize}
+
+El resultado final es un dataset estructurado en formato tabular donde cada fila corresponde a una observación trimestral de un país y cada columna representa una variable económica. Cada observación incluye un identificador temporal (\texttt{period}), un identificador geográfico (\texttt{geo}) y las variables económicas utilizadas como características del modelo. Esta estructura de panel facilita la ampliación del sistema a nuevos países sin modificar el proceso de construcción del dataset.
+
+Los datos procesados se almacenan en formato \textit{Parquet}, un formato columnar diseñado para el almacenamiento eficiente de datos tabulares. Frente a formatos como CSV, Parquet ofrece mejor compresión, lectura más rápida en operaciones de análisis y preservación nativa de tipos de datos (incluyendo el tipo \texttt{Period} de pandas necesario para los índices temporales). Esto resulta especialmente útil al trabajar con series trimestrales que se leen y escriben repetidamente a lo largo del pipeline.
+
+\section{Transformación de variables}
+
+\subsection{Transformación del PIB}
+
+El PIB trimestral en niveles se ha transformado a tasa de variación trimestral mediante la expresión:
+
+\[
+\text{gdp\_qoq\_pct}_t =
+\left(\frac{PIB_t}{PIB_{t-1}} - 1\right)\times100
+\]
+
+Esta transformación permite modelizar el crecimiento económico en lugar del nivel absoluto, evitando problemas de tendencia determinista y facilitando la interpretación económica.
+
+\subsection{Transformación de los indicadores mensuales}
+
+Los tres indicadores de periodicidad mensual ---inflación (HICP), producción industrial (IPI) y ventas minoristas--- siguen un proceso de transformación en dos pasos. En primer lugar se agregan a frecuencia trimestral calculando la media aritmética de los tres meses de cada trimestre. A continuación se calcula la variación porcentual trimestral sobre el índice agregado:
+
+\[
+x\_qoq\_pct_t = \left(\frac{\bar{x}_t}{\bar{x}_{t-1}} - 1\right)\times100
+\]
+
+donde $\bar{x}_t$ es la media del índice en el trimestre $t$. Este proceso es idéntico para los tres indicadores y produce las variables \texttt{inflation\_\allowbreak{}qoq\_\allowbreak{}pct}, \texttt{ipi\_\allowbreak{}qoq\_\allowbreak{}pct} y \texttt{retail\_\allowbreak{}qoq\_\allowbreak{}pct}.
+
+\subsection{Variables rezagadas}
+
+Para evitar el uso de información contemporánea que no estaría disponible en un contexto real de predicción, se han incorporado variables rezagadas tanto del PIB como de los indicadores explicativos.
+
+En particular, se han incluido:
+
+\begin{itemize}
+\item $gdp\_qoq\_pct_{t-1}$
+\item $gdp\_qoq\_pct_{t-2}$
+\item $unemployment\_rate_{t-1}$
+\item $inflation\_qoq\_pct_{t-1}$
+\item $ipi\_qoq\_pct_{t-1}$
+\item $retail\_qoq\_pct_{t-1}$
+\end{itemize}
+
+Estas variables permiten capturar la dinámica temporal del sistema económico y mejorar la capacidad predictiva de los modelos.
+
+\section{División entrenamiento y prueba}
+
+Para la evaluación de los modelos se ha utilizado una división temporal del conjunto de datos, evitando particiones aleatorias que romperían la estructura cronológica de la serie.
+
+Se define:
+
+\begin{itemize}
+\item Conjunto de entrenamiento: observaciones desde 2009Q2 hasta 2023Q3.
+\item Conjunto de prueba: últimos ocho trimestres (2023Q4–2025Q3).
+\end{itemize}
+
+Esta estrategia reproduce un escenario realista de predicción fuera de muestra.
+
+\section{Modelos empleados}
+
+\subsection{Regresión lineal ordinaria (OLS)}
+
+Se implementan dos modelos de regresión lineal ordinaria (OLS) como línea de base interpretable para España: uno univariante, que usa únicamente el desempleo rezagado, y uno multivariante, que incorpora además la inflación rezagada. Estos modelos permiten cuantificar la ganancia que aportan los modelos no lineales y sirven de referencia para detectar relaciones que escapan a una formulación lineal.
+
+\subsection{Modelo basado en Gradient Boosting (XGBoost)}
+
+Se emplea XGBoost como modelo principal, con el objetivo de capturar relaciones no lineales e interacciones entre variables que la regresión lineal no puede representar. Se evalúan dos configuraciones de features: una base con desempleo e inflación rezagados, y una ampliada que incorpora además retardos del propio PIB, el índice de producción industrial y el comercio minorista.
+
+Los hiperparámetros del modelo se resumen en la Tabla~\ref{tab:xgb_params}.
+
+\begin{table}[H]
+\centering
+\caption{Hiperparámetros del modelo XGBoost}
+\label{tab:xgb_params}
+\small
+\begin{tabular}{lll}
+\hline
+\textbf{Parámetro} & \textbf{Valor} & \textbf{Función} \\
+\hline
+\texttt{n\_estimators}    & 500  & Número de árboles construidos secuencialmente \\
+\texttt{learning\_rate}   & 0.05 & Peso de cada árbol nuevo sobre el conjunto \\
+\texttt{max\_depth}       & 3    & Profundidad máxima de cada árbol individual \\
+\texttt{subsample}        & 0.9  & Fracción de observaciones usadas por árbol \\
+\texttt{colsample\_bytree}& 0.9  & Fracción de features seleccionadas por árbol \\
+\hline
+\end{tabular}
+\end{table}
+
+Los parámetros \texttt{max\_depth=3} y \texttt{subsample=0.9} actúan como mecanismos de
+regularización implícita: el primero limita la complejidad de cada árbol individual
+---impidiendo que capture interacciones entre más de tres variables a la vez---, mientras
+que el segundo introduce variabilidad estocástica entre árboles al entrenar cada uno
+sobre una muestra ligeramente distinta. Ambas decisiones son especialmente relevantes
+dado que las series disponibles tienen aproximadamente 58 trimestres por país, un volumen
+reducido que hace al modelo vulnerable al sobreajuste si se permite demasiada complejidad.
+
+Los mismos hiperparámetros se mantienen fijos en todos los bloques experimentales. Esta
+decisión es deliberada: al no variar la configuración del modelo entre bloques, cualquier
+diferencia en los resultados puede atribuirse exclusivamente a la estrategia de
+entrenamiento ---modelos por país, panel combinado o panel con variables de país---
+y no a diferencias en la capacidad del modelo. Una búsqueda de hiperparámetros
+independiente por bloque introduciría un factor de confusión que dificultaría la
+comparación entre estrategias.
+
+\section{Métricas de evaluación}
+
+La calidad predictiva se evalúa mediante dos métricas estándar en problemas de regresión, ambas expresadas en puntos porcentuales de crecimiento trimestral:
+
+\[
+\text{MAE} = \frac{1}{n}\sum_{t=1}^{n}|y_t - \hat{y}_t|
+\qquad
+\text{RMSE} = \sqrt{\frac{1}{n}\sum_{t=1}^{n}(y_t - \hat{y}_t)^2}
+\]
+
+El MAE mide el error medio absoluto y es fácilmente interpretable: un MAE de 0.3 indica que el modelo se equivoca de media 0.3 puntos porcentuales en su predicción del crecimiento trimestral. El RMSE penaliza más los errores grandes al elevarlos al cuadrado, por lo que una diferencia notable entre MAE y RMSE en un mismo modelo señala la presencia de errores puntuales elevados. Ambas métricas se calculan exclusivamente sobre el conjunto de prueba (fuera de muestra).

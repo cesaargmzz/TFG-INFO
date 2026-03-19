@@ -1,0 +1,298 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Chen%
+\ \BBA {} Guestrin%
+}{%
+Chen%
+\ \BBA {} Guestrin%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+chen_guestrin_2016}
+\APACinsertmetastar {%
+chen_guestrin_2016}%
+\begin{APACrefauthors}%
+Chen, T.%
+\BCBT {}\ \BBA {} Guestrin, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {XGBoost: A scalable tree boosting system} {Xgboost: A
+  scalable tree boosting system}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 22nd ACM SIGKDD International
+  Conference on Knowledge Discovery and Data Mining} {Proceedings of the 22nd
+  acm sigkdd international conference on knowledge discovery and data mining}\
+  (\BPGS\ 785--794).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Friedman%
+}{%
+Friedman%
+}{%
+{\protect \APACyear {2001}}%
+}]{%
+friedman_gradient_boosting_2001}
+\APACinsertmetastar {%
+friedman_gradient_boosting_2001}%
+\begin{APACrefauthors}%
+Friedman, J\BPBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2001}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Greedy function approximation: A gradient boosting
+  machine} {Greedy function approximation: A gradient boosting machine}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Annals of Statistics}{29}{5}{1189--1232}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Green%
+\ \BBA {} Armstrong%
+}{%
+Green%
+\ \BBA {} Armstrong%
+}{%
+{\protect \APACyear {2015}}%
+}]{%
+green_armstrong_2015}
+\APACinsertmetastar {%
+green_armstrong_2015}%
+\begin{APACrefauthors}%
+Green, K\BPBI C.%
+\BCBT {}\ \BBA {} Armstrong, J\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Simple versus complex forecasting: The evidence} {Simple
+  versus complex forecasting: The evidence}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Business Research}{68}{8}{1678--1685}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1016/j.jbusres.2015.03.026}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.jbusres.2015.03.026} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hyndman%
+\ \BBA {} Athanasopoulos%
+}{%
+Hyndman%
+\ \BBA {} Athanasopoulos%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+hyndman_athanasopoulos_fpp3}
+\APACinsertmetastar {%
+hyndman_athanasopoulos_fpp3}%
+\begin{APACrefauthors}%
+Hyndman, R\BPBI J.%
+\BCBT {}\ \BBA {} Athanasopoulos, G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2021}.
+\newblock
+\APACrefbtitle {Forecasting: Principles and Practice} {Forecasting: Principles
+  and practice}\ (\PrintOrdinal{3}\ \BEd).
+\newblock
+\APACaddressPublisher{Melbourne, Australia}{OTexts}.
+\newblock
+\begin{APACrefURL} \url{https://otexts.com/fpp3/} \end{APACrefURL}
+\newblock
+\APACrefnote{Online textbook, accessed 2026-02-05}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lequiller%
+\ \BBA {} Blades%
+}{%
+Lequiller%
+\ \BBA {} Blades%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+oecd_understanding_national_accounts_2014}
+\APACinsertmetastar {%
+oecd_understanding_national_accounts_2014}%
+\begin{APACrefauthors}%
+Lequiller, F.%
+\BCBT {}\ \BBA {} Blades, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2014}.
+\newblock
+\APACrefbtitle {Understanding National Accounts} {Understanding national
+  accounts}\ (\PrintOrdinal{Second Edition}\ \BEd).
+\newblock
+\APACaddressPublisher{}{OECD Publishing}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.oecd.org/content/dam/oecd/en/publications/reports/2014/10/understanding-national-accounts_g1g43f55/9789264214637-en.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mullainathan%
+\ \BBA {} Spiess%
+}{%
+Mullainathan%
+\ \BBA {} Spiess%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+mullainathan_spiess_2017}
+\APACinsertmetastar {%
+mullainathan_spiess_2017}%
+\begin{APACrefauthors}%
+Mullainathan, S.%
+\BCBT {}\ \BBA {} Spiess, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Machine Learning: An Applied Econometric Approach}
+  {Machine learning: An applied econometric approach}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Economic Perspectives}{31}{2}{87--106}.
+\newblock
+\begin{APACrefURL}
+  \url{https://pubs.aeaweb.org/doi/pdfplus/10.1257/jep.31.2.87}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1257/jep.31.2.87} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pascual%
+\ \BBA {} Ruiz%
+}{%
+Pascual%
+\ \BBA {} Ruiz%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+pascual_ruiz_ml_series_2021}
+\APACinsertmetastar {%
+pascual_ruiz_ml_series_2021}%
+\begin{APACrefauthors}%
+Pascual, L.%
+\BCBT {}\ \BBA {} Ruiz, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Predicción de series temporales basada en Machine
+  Learning: aplicaciones económicas y financieras} {Predicción de series
+  temporales basada en machine learning: aplicaciones económicas y
+  financieras}.{\BBCQ}
+\newblock
+\BIn{} D.~Pe{\~n}a, P.~Poncela\BCBL {}\ \BBA {} E.~Ruiz\ (\BEDS),
+  \APACrefbtitle {Nuevos métodos de predicción económica con datos masivos.}
+  {Nuevos métodos de predicción económica con datos masivos.}
+\newblock
+\APACaddressPublisher{Madrid}{Funcas}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.funcas.es/wp-content/uploads/2021/05/Nuevos-m%C3%A9todos-de-predicci%C3%B3n-econ%C3%B3mica-con-datos-masivos_8.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Stellwagen%
+\ \BBA {} Tashman%
+}{%
+Stellwagen%
+\ \BBA {} Tashman%
+}{%
+{\protect \APACyear {2013}}%
+}]{%
+stellwagen_tashman_2013}
+\APACinsertmetastar {%
+stellwagen_tashman_2013}%
+\begin{APACrefauthors}%
+Stellwagen, E.%
+\BCBT {}\ \BBA {} Tashman, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {ARIMA: The Models of Box and Jenkins} {Arima: The models
+  of box and jenkins}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Foresight: The International Journal of Applied
+  Forecasting}{}{28}{28--33}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.forecasters.org/foresight/issues/foresight-28}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Stock%
+\ \BBA {} Watson%
+}{%
+Stock%
+\ \BBA {} Watson%
+}{%
+{\protect \APACyear {2003}}%
+}]{%
+stock_watson_2003}
+\APACinsertmetastar {%
+stock_watson_2003}%
+\begin{APACrefauthors}%
+Stock, J\BPBI H.%
+\BCBT {}\ \BBA {} Watson, M\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Forecasting Output and Inflation: The Role of Asset
+  Prices} {Forecasting output and inflation: The role of asset prices}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Economic Perspectives}{17}{4}{3--22}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.princeton.edu/~mwatson/papers/Stock_Watson_JEL_2003.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zhou%
+}{%
+Zhou%
+}{%
+{\protect \APACyear {2012}}%
+}]{%
+zhou_ensemble_2012}
+\APACinsertmetastar {%
+zhou_ensemble_2012}%
+\begin{APACrefauthors}%
+Zhou, Z\BHBI H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2012}.
+\newblock
+\APACrefbtitle {Ensemble Methods: Foundations and Algorithms} {Ensemble
+  methods: Foundations and algorithms}.
+\newblock
+\APACaddressPublisher{}{Chapman and Hall/CRC}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

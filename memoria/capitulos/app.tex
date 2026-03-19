@@ -1,0 +1,98 @@
+\chapter{Aplicación web de visualización}
+\label{app}
+
+\section{Objetivo de la aplicación}
+
+Con el fin de facilitar el análisis e interpretación de los resultados obtenidos en los experimentos, se ha desarrollado una aplicación web interactiva que permite visualizar de forma dinámica las predicciones generadas por los modelos.
+
+La aplicación no realiza entrenamiento en tiempo real, sino que consume los archivos generados automáticamente por el pipeline de modelado (ficheros CSV ubicados en el directorio \texttt{reports/}). De este modo, se mantiene una clara separación entre la fase de entrenamiento y la fase de visualización.
+
+Esta arquitectura garantiza reproducibilidad, modularidad y simplicidad en el mantenimiento del sistema.
+
+\section{Arquitectura del sistema}
+
+La aplicación se integra como la capa final del flujo de trabajo desarrollado a lo largo del proyecto. La arquitectura general puede resumirse de la siguiente manera:
+
+\begin{enumerate}
+    \item Descarga de datos mediante la API de Eurostat.
+    \item Transformación y cálculo de tasas de variación trimestral.
+    \item Construcción del dataset unificado con retardos.
+    \item Entrenamiento de modelos predictivos.
+    \item Generación de métricas y predicciones en formato CSV.
+    \item Visualización interactiva mediante la aplicación web.
+\end{enumerate}
+
+Esta estructura modular permite escalar el análisis a nuevos países o modelos sin modificar la lógica de la aplicación.
+
+\section{Interfaz y funcionalidades}
+
+La barra lateral de la aplicación expone tres selectores encadenados que determinan
+completamente la vista mostrada:
+
+\begin{itemize}
+    \item \textbf{Bloque experimental}: permite elegir entre los tres bloques de
+          experimentos implementados --- Bloque~0 (modelos por país), Bloque~1 (panel
+          combinado) y Bloque~2 (panel con variable \emph{geo} como feature). La selección
+          determina qué conjunto de ficheros CSV se carga.
+    \item \textbf{País}: España (ES), Francia (FR) o Italia (IT). Filtra tanto las
+          predicciones como las métricas al país seleccionado.
+    \item \textbf{Modelo}: configuración base o ampliada. El nombre de la opción se
+          adapta al bloque activo (p.ej. ``XGBoost base'' en el Bloque~0,
+          ``Panel combinado ampliado'' en el Bloque~1).
+\end{itemize}
+
+A partir de estos tres selectores, la aplicación construye dinámicamente las rutas a los
+ficheros CSV correspondientes, siguiendo la convención de nombres recogida en la
+Tabla~\ref{tab:app_csvs}.
+
+\begin{table}[H]
+\centering
+\caption{Ficheros CSV leídos por la aplicación según el bloque activo}
+\label{tab:app_csvs}
+\small
+\begin{tabular}{lll}
+\hline
+\textbf{Bloque} & \textbf{Predicciones} & \textbf{Métricas} \\
+\hline
+0 & \texttt{predictions\_xgboost\_\{base|ext\}\_\{geo\}.csv}       & \texttt{metrics\_xgboost\_\{geo\}\_compare.csv} \\
+1 & \texttt{predictions\_panel\_combined\_\{base|ext\}\_\{geo\}.csv} & \texttt{metrics\_panel\_combined\_compare.csv}  \\
+2 & \texttt{predictions\_panel\_geo\_\{base|ext\}\_\{geo\}.csv}      & \texttt{metrics\_panel\_geo\_compare.csv}       \\
+\hline
+\end{tabular}
+\end{table}
+
+En los Bloques~1 y~2 el fichero de métricas contiene los resultados de los tres países en
+un único CSV (columna \texttt{geo}); la aplicación filtra automáticamente las filas
+correspondientes al país seleccionado. En el Bloque~0 cada país tiene su propio fichero
+de métricas.
+
+Una vez cargados los datos, el área principal muestra:
+
+\begin{itemize}
+    \item \textbf{Indicadores KPI}: modelo activo, MAE y RMSE en puntos porcentuales,
+          y número de variables del modelo.
+    \item \textbf{Gráfica de predicción}: comparación entre el PIB QoQ real y el
+          predicho a lo largo del conjunto de prueba, generada con Plotly y con
+          interactividad nativa (zoom, hover por trimestre).
+    \item \textbf{Gráfica de errores}: evolución del error de predicción trimestre a
+          trimestre con línea de referencia en cero.
+    \item \textbf{Tablas opcionales}: predicciones completas y métricas comparativas,
+          activables mediante checkbox en la barra lateral.
+\end{itemize}
+
+\section{Decisiones técnicas}
+
+La aplicación ha sido desarrollada con Streamlit, seleccionado por su integración
+directa con el ecosistema Python del proyecto y su capacidad para construir interfaces
+interactivas sin necesidad de código JavaScript o HTML adicional.
+
+Las visualizaciones se implementan con Plotly, que proporciona interactividad nativa
+(zoom, selección de rango, inspección de valores por trimestre) sin coste de desarrollo
+adicional respecto a bibliotecas estáticas como Matplotlib.
+
+Se ha optado por una arquitectura desacoplada en la que la aplicación únicamente lee
+los CSV generados por los scripts de entrenamiento. Esta separación tiene dos ventajas
+concretas: permite actualizar los resultados simplemente re-ejecutando el script de
+entrenamiento correspondiente sin tocar la aplicación, y facilita la incorporación de
+nuevos bloques experimentales añadiendo únicamente los CSV con la convención de nombres
+establecida.
