@@ -8,44 +8,51 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- Lineal univariante (ES, test)}}{16}{figure.caption.8}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- Lineal multivariante (ES, test)}}{17}{figure.caption.9}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- Lineal multivariante (ES, test)}}{17}{figure.caption.9}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (ES, test)}}{18}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (ES, test)}}{18}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (ES, test)}}{19}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (ES, test)}}{19}{figure.caption.12}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (FR, test)}}{19}{figure.caption.13}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (FR, test)}}{19}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (IT, test)}}{19}{figure.caption.14}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (IT, test)}}{19}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (IT, test)}}{20}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (IT, test)}}{20}{figure.caption.14}%
 \contentsline {figure}{\numberline {4.11}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (ES)}}{20}{figure.caption.15}%
 \contentsline {figure}{\numberline {4.12}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (FR)}}{20}{figure.caption.15}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (IT)}}{20}{figure.caption.16}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (ES, test)}}{22}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (ES, test)}}{22}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (ES, test)}}{22}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (ES, test)}}{22}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (FR, test)}}{23}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (FR, test)}}{23}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (FR, test)}}{23}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.21}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (FR, test)}}{23}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.22}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (IT, test)}}{24}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.23}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (IT, test)}}{24}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.24}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (IT, test)}}{24}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.25}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (IT, test)}}{24}{figure.caption.20}%
-\contentsline {figure}{\numberline {4.26}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel combinado base}}{25}{figure.caption.21}%
-\contentsline {figure}{\numberline {4.27}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel combinado ampliado}}{25}{figure.caption.21}%
-\contentsline {figure}{\numberline {4.28}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (ES, test)}}{27}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.29}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (ES, test)}}{27}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.30}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (ES, test)}}{27}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.31}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (ES, test)}}{27}{figure.caption.23}%
-\contentsline {figure}{\numberline {4.32}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (FR, test)}}{28}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.33}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (FR, test)}}{28}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.34}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (FR, test)}}{28}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.35}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (FR, test)}}{28}{figure.caption.24}%
-\contentsline {figure}{\numberline {4.36}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (IT, test)}}{29}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.37}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (IT, test)}}{29}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.38}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (IT, test)}}{29}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.39}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (IT, test)}}{29}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.40}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel geo base}}{30}{figure.caption.26}%
-\contentsline {figure}{\numberline {4.41}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel geo ampliado}}{30}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (IT)}}{21}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (ES, test)}}{23}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (ES, test)}}{23}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (ES, test)}}{23}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (ES, test)}}{23}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (FR, test)}}{24}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (FR, test)}}{24}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (FR, test)}}{24}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (FR, test)}}{24}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (IT, test)}}{25}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (IT, test)}}{25}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (IT, test)}}{25}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.25}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (IT, test)}}{25}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.26}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel combinado base}}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.27}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel combinado ampliado}}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.28}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (ES, test)}}{28}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.29}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (ES, test)}}{28}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.30}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (ES, test)}}{28}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.31}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (ES, test)}}{28}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.32}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (FR, test)}}{29}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.33}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (FR, test)}}{29}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.34}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (FR, test)}}{29}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.35}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (FR, test)}}{29}{figure.caption.24}%
+\contentsline {figure}{\numberline {4.36}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (IT, test)}}{30}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.37}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (IT, test)}}{30}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.38}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (IT, test)}}{30}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.39}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (IT, test)}}{30}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.40}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel geo base}}{31}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.41}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel geo ampliado}}{31}{figure.caption.26}%
+\contentsline {figure}{\numberline {4.42}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- Transfer ES+FR → IT (test)}}{33}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.43}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- Transfer ES+FR → IT (test)}}{33}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.44}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- Transfer ES+IT → FR (test)}}{34}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.45}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- Transfer ES+IT → FR (test)}}{34}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.46}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- Transfer FR+IT → ES (test)}}{34}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.47}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- Transfer FR+IT → ES (test)}}{34}{figure.caption.31}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Interfaz de la aplicación web --- Bloque~0, XGBoost base (ES)}}{39}{figure.caption.33}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

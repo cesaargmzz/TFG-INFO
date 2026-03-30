@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.17)  20 MAR 2026 18:41
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.17)  30 MAR 2026 18:27
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **./main.tex
 (main.tex
@@ -2330,19 +2330,25 @@ Overfull \hbox (20.35634pt too wide) in paragraph at lines 47--67
 ]
 (capitulos/Introduccion.tex
 chapter 1.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
+[1
 
 
-]
-[2]) (capitulos/marcoteorico.tex [3] [4
+] [2] [3]
+Overfull \hbox (9.0381pt too wide) in paragraph at lines 57--58
+[]\TU/lmr/m/n/10.95 Comparar dis-
+ []
 
 
-]
+Overfull \hbox (4.16539pt too wide) in paragraph at lines 61--62
+[]\TU/lmr/m/n/10.95 Construir una aplicación web
+ []
+
+) (capitulos/marcoteorico.tex [4]
 chapter 2.
-[5] [6]
+[5
+
+
+] [6]
 File: figures/gradientboosting.png Graphic file (type bmp)
 <figures/gradientboosting.png>
 
@@ -2357,7 +2363,7 @@ on-error -interaction=batchmode -jobname "archivos/figuras-procesadas/main-figu
 re0" "\def\tikzexternalrealjob{main}\input{main}"' ========
 runsystem(xelatex -enable-write18 -halt-on-error -interaction=batchmode -jobnam
 e "archivos/figuras-procesadas/main-figure0" "\def\tikzexternalrealjob{main}\in
-put{main}")...disabled (restricted).
+put{main}")...executed.
 
 \openout3 = `main.auxlock'.
 
@@ -2420,28 +2426,36 @@ File: figures/bloque 0/xgboost_base_es_real_vs_pred.png Graphic file (type bmp)
 <figures/bloque 0/xgboost_base_es_real_vs_pred.png>
 File: figures/bloque 0/xgboost_ext_es_real_vs_pred.png Graphic file (type bmp)
 <figures/bloque 0/xgboost_ext_es_real_vs_pred.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
 File: figures/bloque 0/xgboost_base_fr_real_vs_pred.png Graphic file (type bmp)
 
 <figures/bloque 0/xgboost_base_fr_real_vs_pred.png>
 File: figures/bloque 0/xgboost_ext_fr_real_vs_pred.png Graphic file (type bmp)
 <figures/bloque 0/xgboost_ext_fr_real_vs_pred.png>
- [18]
 File: figures/bloque 0/xgboost_base_it_real_vs_pred.png Graphic file (type bmp)
 
 <figures/bloque 0/xgboost_base_it_real_vs_pred.png>
 File: figures/bloque 0/xgboost_ext_it_real_vs_pred.png Graphic file (type bmp)
 <figures/bloque 0/xgboost_ext_it_real_vs_pred.png>
+
+[19]
 File: figures/bloque 0/xgboost_ext_es_feature_importance.png Graphic file (type
  bmp)
 <figures/bloque 0/xgboost_ext_es_feature_importance.png>
 File: figures/bloque 0/xgboost_ext_fr_feature_importance.png Graphic file (type
  bmp)
 <figures/bloque 0/xgboost_ext_fr_feature_importance.png>
- [19]
 File: figures/bloque 0/xgboost_ext_it_feature_importance.png Graphic file (type
  bmp)
 <figures/bloque 0/xgboost_ext_it_feature_importance.png>
- [20] [21]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+[21]
 File: figures/bloque 1/panel_combined_base_es_real_vs_pred.png Graphic file (ty
 pe bmp)
 <figures/bloque 1/panel_combined_base_es_real_vs_pred.png>
@@ -2454,7 +2468,11 @@ File: figures/bloque 1/panel_combined_base_es_errors.png Graphic file (type bmp
 File: figures/bloque 1/panel_combined_ext_es_errors.png Graphic file (type bmp)
 
 <figures/bloque 1/panel_combined_ext_es_errors.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [22]
+[23]
 File: figures/bloque 1/panel_combined_base_fr_real_vs_pred.png Graphic file (ty
 pe bmp)
 <figures/bloque 1/panel_combined_base_fr_real_vs_pred.png>
@@ -2467,7 +2485,7 @@ File: figures/bloque 1/panel_combined_base_fr_errors.png Graphic file (type bmp
 File: figures/bloque 1/panel_combined_ext_fr_errors.png Graphic file (type bmp)
 
 <figures/bloque 1/panel_combined_ext_fr_errors.png>
- [23]
+ [24]
 File: figures/bloque 1/panel_combined_base_it_real_vs_pred.png Graphic file (ty
 pe bmp)
 <figures/bloque 1/panel_combined_base_it_real_vs_pred.png>
@@ -2480,22 +2498,18 @@ File: figures/bloque 1/panel_combined_base_it_errors.png Graphic file (type bmp
 File: figures/bloque 1/panel_combined_ext_it_errors.png Graphic file (type bmp)
 
 <figures/bloque 1/panel_combined_ext_it_errors.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24]
+ [25]
 File: figures/bloque 1/panel_combined_base_combined_feature_importance.png Grap
 hic file (type bmp)
 <figures/bloque 1/panel_combined_base_combined_feature_importance.png>
 File: figures/bloque 1/panel_combined_ext_combined_feature_importance.png Graph
 ic file (type bmp)
 <figures/bloque 1/panel_combined_ext_combined_feature_importance.png>
-
-[25]
-LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <14.4> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 470.
-
  [26]
+LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <14.4> not available
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 476.
+
+ [27]
 File: figures/bloque 2/panel_geo_base_es_real_vs_pred.png Graphic file (type bm
 p)
 <figures/bloque 2/panel_geo_base_es_real_vs_pred.png>
@@ -2506,8 +2520,8 @@ File: figures/bloque 2/panel_geo_base_es_errors.png Graphic file (type bmp)
 <figures/bloque 2/panel_geo_base_es_errors.png>
 File: figures/bloque 2/panel_geo_ext_es_errors.png Graphic file (type bmp)
 <figures/bloque 2/panel_geo_ext_es_errors.png>
- [27]
-Overfull \hbox (6.00513pt too wide) in paragraph at lines 575--580
+ [28]
+Overfull \hbox (6.00513pt too wide) in paragraph at lines 583--588
 []\TU/lmr/m/n/10.95 El modelo ampliado recupera la capacidad predictiva con un 
 MAE de 0.224, apenas 0.009 p.p.
  []
@@ -2522,7 +2536,7 @@ File: figures/bloque 2/panel_geo_base_fr_errors.png Graphic file (type bmp)
 <figures/bloque 2/panel_geo_base_fr_errors.png>
 File: figures/bloque 2/panel_geo_ext_fr_errors.png Graphic file (type bmp)
 <figures/bloque 2/panel_geo_ext_fr_errors.png>
-[28]
+[29]
 File: figures/bloque 2/panel_geo_base_it_real_vs_pred.png Graphic file (type bm
 p)
 <figures/bloque 2/panel_geo_base_it_real_vs_pred.png>
@@ -2536,8 +2550,8 @@ File: figures/bloque 2/panel_geo_ext_it_errors.png Graphic file (type bmp)
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
-Overfull \hbox (21.2925pt too wide) in paragraph at lines 673--681
+ [30]
+Overfull \hbox (21.2925pt too wide) in paragraph at lines 681--689
 []\TU/lmr/m/n/10.95 En el modelo base (Figura []4.40[]), las variables económic
 as \TU/lmtt/m/n/10.95 unemployment_rate_l1 \TU/lmr/m/n/10.95 e \TU/lmtt/m/n/10.
 95 inflation_
@@ -2549,28 +2563,58 @@ ile (type bmp)
 File: figures/bloque 2/panel_geo_ext_combined_feature_importance.png Graphic fi
 le (type bmp)
 <figures/bloque 2/panel_geo_ext_combined_feature_importance.png>
-[30]) (capitulos/app.tex [31] [32
+[31]
+Overfull \hbox (76.83447pt too wide) in paragraph at lines 773--779
+\TU/lmtt/m/n/10.95 gdp_qoq_pct_l2\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 unemplo
+yment_rate_l1\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/10.95 inflation_qoq_pct_l1\TU/lmr
+/m/n/10.95 , \TU/lmtt/m/n/10.95 ipi_qoq_pct_l1\TU/lmr/m/n/10.95 , \TU/lmtt/m/n/
+10.95 retail_qoq_pct_l1\TU/lmr/m/n/10.95 ),
+ []
+
+[32]
+File: figures/bloque 3/panel_transfer_ext_it_real_vs_pred.png Graphic file (typ
+e bmp)
+<figures/bloque 3/panel_transfer_ext_it_real_vs_pred.png>
+File: figures/bloque 3/panel_transfer_ext_it_errors.png Graphic file (type bmp)
+
+<figures/bloque 3/panel_transfer_ext_it_errors.png>
+ [33]
+File: figures/bloque 3/panel_transfer_ext_fr_real_vs_pred.png Graphic file (typ
+e bmp)
+<figures/bloque 3/panel_transfer_ext_fr_real_vs_pred.png>
+File: figures/bloque 3/panel_transfer_ext_fr_errors.png Graphic file (type bmp)
+
+<figures/bloque 3/panel_transfer_ext_fr_errors.png>
+File: figures/bloque 3/panel_transfer_ext_es_real_vs_pred.png Graphic file (typ
+e bmp)
+<figures/bloque 3/panel_transfer_ext_es_real_vs_pred.png>
+File: figures/bloque 3/panel_transfer_ext_es_errors.png Graphic file (type bmp)
+
+<figures/bloque 3/panel_transfer_ext_es_errors.png>
+ [34]) (capitulos/app.tex [35] [36
 
 
 ]
 chapter 5.
-[33]
-Overfull \hbox (55.40231pt too wide) in paragraph at lines 53--62
+[37]
+Overfull \hbox (55.40231pt too wide) in paragraph at lines 55--64
  [][] 
  []
 
-
-Overfull \hbox (1.2978pt too wide) in paragraph at lines 89--92
+File: figures/app_screenshot.png Graphic file (type bmp)
+<figures/app_screenshot.png>
+[38]
+Overfull \hbox (1.2978pt too wide) in paragraph at lines 103--106
 []\TU/lmr/m/n/10.95 Las visualizaciones se implementan con Plotly, que proporci
 ona interactividad nativa (zoom,
  []
 
-) (capitulos/conclusiones.tex [34]
+) (capitulos/conclusiones.tex [39] [40
+
+
+]
 chapter 6.
-) (main.bbl [35
-
-
-] [36
+[41] [42]) (main.bbl [43] [44
 
 
 ]
@@ -2598,19 +2642,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--145
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 74.
 See the caption package documentation for explanation.
 
-[37] (main.aux)
+[45] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 60317 strings out of 402987
- 1468847 string characters out of 5448524
- 2262673 words of memory out of 5000000
- 87965 multiletter control sequences out of 15000+600000
+ 60402 strings out of 402987
+ 1472407 string characters out of 5448524
+ 2262746 words of memory out of 5000000
+ 88042 multiletter control sequences out of 15000+600000
  644054 words of font info for 138 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  113i,21n,114p,11306b,1009s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (47 pages).
+Output written on main.pdf (55 pages).

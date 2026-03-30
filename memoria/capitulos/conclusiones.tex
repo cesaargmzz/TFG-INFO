@@ -7,3 +7,150 @@
 
 \chapter{Conclusiones}
 \label{conclusiones}
+
+Este trabajo ha explorado la aplicación de modelos de aprendizaje automático a la
+estimación del crecimiento trimestral del PIB en tres economías de la zona euro ---España,
+Francia e Italia--- a través de un diseño experimental progresivo organizado en cuatro
+bloques. A lo largo del proyecto se han construido los datos, entrenado y evaluado los
+modelos, y desarrollado una herramienta de visualización interactiva que permite explorar
+los resultados obtenidos. En esta sección se evalúa el grado de cumplimiento de los
+objetivos planteados, se recogen las conclusiones técnicas principales y se señalan las
+limitaciones del trabajo y posibles líneas de continuación.
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Cumplimiento de objetivos}
+
+\textbf{O1 — Construir un pipeline de datos reproducible.} Se ha implementado un proceso
+completo y automatizado de descarga, transformación y estructuración de datos
+macroeconómicos procedentes de la API de Eurostat para España, Francia e Italia. El
+pipeline cubre desde la obtención de los datos brutos hasta la generación del dataset
+panel unificado (\texttt{dataset\_panel\_v1.parquet}), que actúa como fuente única para
+todos los experimentos. La modularidad del diseño permite incorporar nuevos países o
+indicadores sin modificar la lógica existente. Este objetivo se considera cumplido.
+
+\textbf{O2 — Evaluar la capacidad predictiva de modelos de aprendizaje automático.} Se
+han comparado dos configuraciones de XGBoost ---base y ampliada--- bajo cuatro estrategias
+de entrenamiento distintas. Los resultados apuntan a que XGBoost supera de forma
+consistente a los modelos de regresión lineal de referencia en la mayor parte de los
+escenarios analizados, siendo el modelo ampliado (con lags del PIB e indicadores de
+actividad) el que mejor rendimiento ofrece cuando dispone de suficiente volumen de datos.
+Este objetivo se considera cumplido, con la salvedad de que el reducido tamaño del
+conjunto de prueba (8 trimestres) limita la solidez estadística de las comparaciones.
+
+\textbf{O3 — Analizar el efecto del enfoque multi-país.} El diseño experimental ha
+permitido explorar tres dimensiones del enfoque multi-país: el entrenamiento conjunto sin
+distinción de origen (Bloque~1), la incorporación explícita de la variable de país como
+feature (Bloque~2) y la transferencia completa entre economías (Bloque~3). Los resultados
+sugieren que combinar datos de varios países puede reducir el sobreajuste cuando las
+observaciones individuales por país son escasas, y que los patrones macroeconómicos
+presentan un grado de transferibilidad entre estas economías mayor del esperado. Este
+objetivo se considera cumplido.
+
+\textbf{O4 — Desarrollar una herramienta de visualización interactiva.} Se ha construido
+una aplicación web con Streamlit que permite explorar y comparar los resultados de los
+cuatro bloques experimentales para los tres países y las distintas configuraciones de
+modelo. La aplicación consume directamente los ficheros CSV generados por el pipeline de
+entrenamiento, lo que garantiza la consistencia entre los resultados presentados y los
+experimentos realizados. Este objetivo se considera cumplido.
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Conclusiones técnicas}
+
+Del conjunto de experimentos realizados se derivan las siguientes conclusiones técnicas
+principales:
+
+\textbf{Los lags del PIB son la feature más informativa.} En todos los bloques donde
+el modelo ampliado tiene acceso a los retardos del propio PIB
+(\texttt{gdp\_qoq\_pct\_l1} y \texttt{gdp\_qoq\_pct\_l2}), estos concentran la mayor
+parte de la importancia explicativa según el criterio de ganancia de XGBoost. El
+indicador de producción industrial y el comercio minorista rezagados contribuyen de forma
+secundaria, mientras que el desempleo y la inflación rezagados presentan una contribución
+marginal. Esto sugiere que el nivel reciente de actividad económica es el predictor más
+útil del crecimiento trimestral a un horizonte de un trimestre.
+
+\textbf{El enfoque panel parece reducir el sobreajuste.} El caso más ilustrativo es el
+del modelo ampliado para España: en el Bloque~0, entrenado solo con datos españoles,
+obtenía un MAE de 0.796 debido a una predicción anómala en el primer trimestre del
+periodo de prueba; en el Bloque~1, entrenado con los datos de los tres países, el mismo
+modelo ampliado obtiene un MAE de 0.297. Este resultado apunta a que el volumen reducido
+de observaciones por país es una fuente de sobreajuste relevante en este tipo de
+problemas.
+
+\textbf{Las variables de identidad geográfica son secundarias respecto a las
+autorregresivas.} El Bloque~2 mostró que añadir dummies de país al modelo ampliado no
+aporta mejoras apreciables, ya que el modelo prácticamente ignora esa información cuando
+dispone de los lags del PIB. En cambio, cuando el modelo base carece de variables
+autorregresivas, las dummies se sobreexplotan y degradan gravemente las predicciones ---con
+un MAE de 4.324 en Italia en el peor caso---. Esto sugiere que la identidad del país ya
+queda codificada de forma implícita en la dinámica autorregresiva de cada economía.
+
+\textbf{Los patrones del ciclo trimestral parecen ser parcialmente transferibles.} El
+Bloque~3 evidenció que es posible obtener predicciones competitivas sobre un país no
+visto durante el entrenamiento. El resultado más llamativo fue Italia, cuyo MAE en
+transferencia (0.311, entrenando con ES+FR) resultó inferior al de todos los bloques
+anteriores en los que Italia sí participaba en el entrenamiento. Este hallazgo apunta a
+que los datos de un único país pueden ser insuficientes para aprender sus propios patrones,
+y que las regularidades del ciclo macroeconómico compartidas entre economías similares
+pueden ser más informativas.
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Limitaciones}
+
+Los resultados obtenidos deben interpretarse teniendo en cuenta las siguientes
+limitaciones:
+
+\begin{itemize}
+    \item \textbf{Tamaño del conjunto de prueba.} El periodo de evaluación comprende
+    únicamente 8 trimestres por país. Con un número tan reducido de observaciones, las
+    métricas son sensibles a uno o dos errores puntuales y las diferencias entre modelos
+    no pueden considerarse estadísticamente significativas.
+
+    \item \textbf{Número de países.} El análisis se limita a tres economías de la zona
+    euro. No es posible generalizar las conclusiones sobre transferibilidad o efecto panel
+    a otros contextos geográficos o económicos sin experimentos adicionales.
+
+    \item \textbf{Horizonte de predicción.} Todos los modelos estiman el crecimiento del
+    trimestre inmediatamente siguiente. No se ha explorado la capacidad de predicción a
+    horizontes de dos o más trimestres, donde la degradación del rendimiento previsiblemente
+    sería mayor.
+
+    \item \textbf{Variedad de algoritmos.} Los experimentos se centran en XGBoost y
+    regresión lineal como referencia. No se han evaluado otros enfoques como Random Forest,
+    redes neuronales recurrentes (LSTM) o modelos de series temporales clásicos (ARIMA,
+    VAR), lo que impide valorar si las conclusiones son específicas del algoritmo utilizado.
+
+    \item \textbf{Ajuste de hiperparámetros.} Se ha utilizado una configuración fija de
+    hiperparámetros para todos los bloques y países. Un proceso de búsqueda sistemática
+    podría mejorar los resultados individuales y afectar a las comparaciones entre bloques.
+\end{itemize}
+
+% ══════════════════════════════════════════════════════════════════════
+\section{Trabajo futuro}
+
+A partir de los resultados y limitaciones identificadas, se proponen las siguientes líneas
+de trabajo futuro:
+
+\begin{itemize}
+    \item \textbf{Ampliar el panel de países.} Incorporar más economías de la zona euro
+    permitiría comprobar si la transferibilidad observada se mantiene con estructuras
+    económicas más heterogéneas y aumentaría el volumen de datos disponibles para el
+    entrenamiento.
+
+    \item \textbf{Explorar horizontes multi-paso.} Extender los experimentos a predicciones
+    de dos o tres trimestres adelante permitiría evaluar la capacidad de los modelos para
+    anticipar cambios de tendencia con mayor antelación.
+
+    \item \textbf{Incorporar indicadores adicionales.} Variables como el tipo de interés
+    de referencia del BCE, los índices de confianza empresarial o los precios de materias
+    primas podrían aportar señal predictiva adicional, especialmente en periodos de cambios
+    de política monetaria.
+
+    \item \textbf{Comparar con otros algoritmos.} Evaluar modelos como Random Forest,
+    redes LSTM o modelos VAR permitiría determinar si las conclusiones obtenidas son
+    específicas de XGBoost o reflejan propiedades más generales del problema.
+
+    \item \textbf{Validación estadística de las comparaciones.} Aplicar tests de
+    significación estadística para la comparación de errores de predicción (como el test
+    de Diebold-Mariano) permitiría determinar si las diferencias observadas entre modelos
+    son estadísticamente relevantes o atribuibles a variabilidad muestral.
+\end{itemize}

@@ -2,8 +2,9 @@
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Importancia del PIB}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Dificultad de la predicción económica}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}IA y reconocimiento de patrones en datos económicos}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.3}IA y reconocimiento de patrones en datos económicos}{3}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Objetivos}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Estructura de la memoria}{4}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Marco Teórico}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Predicción económica y series temporales}{5}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Modelos de aprendizaje automático para predicción económica}{6}{section.2.2}%
@@ -24,33 +25,42 @@
 \contentsline {section}{\numberline {3.7}Métricas de evaluación}{13}{section.3.7}%
 \contentsline {chapter}{\numberline {4}Experimentos}{15}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Diseño experimental}{15}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Modelos de referencia --- Regresión lineal}{15}{section.4.2}%
+\contentsline {section}{\numberline {4.2}Modelos de referencia --- Regresión lineal}{16}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Modelo univariante}{16}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Modelo multivariante}{16}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Síntesis y comparación con el modelo de referencia}{17}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Bloque 0 --- Modelos por país}{17}{section.4.3}%
+\contentsline {section}{\numberline {4.3}Bloque 0 --- Modelos por país}{18}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}España}{18}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Francia}{18}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}Francia}{19}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Italia}{19}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Importancia de variables}{19}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Síntesis del Bloque 0}{20}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.4}Importancia de variables}{20}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Síntesis del Bloque 0}{21}{subsection.4.3.5}%
 \contentsline {section}{\numberline {4.4}Bloque 1 --- Modelo panel combinado}{21}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}España}{21}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Francia}{22}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Italia}{23}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.1}España}{22}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Francia}{23}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Italia}{24}{subsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.4.4}Importancia de variables}{25}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Síntesis del Bloque 1}{25}{subsection.4.4.5}%
-\contentsline {section}{\numberline {4.5}Bloque 2 --- Panel con variable \emph {geo} como feature}{26}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}España}{26}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Francia}{27}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Italia}{28}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}Importancia de variables}{30}{subsection.4.5.4}%
-\contentsline {subsection}{\numberline {4.5.5}Síntesis del Bloque 2}{30}{subsection.4.5.5}%
-\contentsline {chapter}{\numberline {5}Aplicación web de visualización}{33}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Objetivo de la aplicación}{33}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Arquitectura del sistema}{33}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Interfaz y funcionalidades}{33}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Decisiones técnicas}{34}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Conclusiones}{35}{chapter.6}%
-\contentsline {chapter}{\nonumberline Bibliografía}{37}{chapter*.28}%
+\contentsline {subsection}{\numberline {4.4.5}Síntesis del Bloque 1}{26}{subsection.4.4.5}%
+\contentsline {section}{\numberline {4.5}Bloque 2 --- Panel con variable \emph {geo} como feature}{27}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}España}{27}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Francia}{28}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Italia}{29}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Importancia de variables}{31}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Síntesis del Bloque 2}{31}{subsection.4.5.5}%
+\contentsline {section}{\numberline {4.6}Bloque 3 --- Transferencia entre países}{32}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Italia (ES+FR → IT)}{33}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Francia (ES+IT → FR)}{34}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {4.6.3}España (FR+IT → ES)}{34}{subsection.4.6.3}%
+\contentsline {subsection}{\numberline {4.6.4}Síntesis del Bloque 3}{35}{subsection.4.6.4}%
+\contentsline {chapter}{\numberline {5}Aplicación web de visualización}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Objetivo de la aplicación}{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Arquitectura del sistema}{37}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Interfaz y funcionalidades}{38}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Decisiones técnicas}{39}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Conclusiones}{41}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Cumplimiento de objetivos}{41}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Conclusiones técnicas}{42}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Limitaciones}{42}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Trabajo futuro}{43}{section.6.4}%
+\contentsline {chapter}{\nonumberline Bibliografía}{45}{chapter*.34}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
