@@ -67,4 +67,70 @@ Además, XGBoost introduce diversas mejoras en términos de eficiencia computaci
 
 En el contexto de la predicción económica, XGBoost resulta especialmente adecuado para trabajar con datos tabulares que incluyen múltiples variables explicativas. Su capacidad para capturar relaciones no lineales y efectos de interacción entre variables lo convierte en una herramienta potente para analizar la relación entre distintos indicadores macroeconómicos y la evolución del PIB. \citep{chen_guestrin_2016}
 
-Por estas razones, XGBoost ha sido ampliamente utilizado en distintos ámbitos del análisis de datos y ha demostrado un alto rendimiento en competiciones de aprendizaje automático y aplicaciones reales. Su equilibrio entre capacidad predictiva, eficiencia computacional y control del sobreajuste lo convierte en una opción especialmente atractiva para problemas de predicción económica.
+Por estas razones, XGBoost ha sido ampliamente utilizado en distintos ámbitos del análisis de datos y ha demostrado un alto rendimiento en competiciones de aprendizaje automático y aplicaciones reales. Su equilibrio entre capacidad predictiva, eficiencia computacional y control del sobreajuste lo convierte en una opción especialmente atractiva para problemas de predicción económica. La Figura~\ref{fig:decision_tree} muestra la estructura interna de un árbol de decisión individual de profundidad 3, el tipo de modelo base que emplea XGBoost.
+
+\begin{figure}[H]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+  nodo/.style={draw, rounded corners=3pt, fill=blue!10, minimum width=1.8cm,
+               minimum height=0.75cm, align=center, font=\small},
+  hoja/.style={draw, rounded corners=3pt, fill=green!15, minimum width=1.2cm,
+               minimum height=0.65cm, align=center, font=\small},
+  arr/.style={->, >=stealth, thick},
+  etiq/.style={font=\scriptsize, inner sep=2pt}
+]
+
+% --- Nivel 0 (raíz) ---
+\node[nodo] (n0) {$x_1 < \theta_1$};
+
+% --- Nivel 1 ---
+\node[nodo, below left=1.0cm and 1.6cm of n0]  (n1l) {$x_2 < \theta_2$};
+\node[nodo, below right=1.0cm and 1.6cm of n0] (n1r) {$x_3 < \theta_3$};
+
+% --- Nivel 2 ---
+\node[nodo, below left=0.9cm and 0.4cm of n1l]  (n2ll) {$x_4 < \theta_4$};
+\node[nodo, below right=0.9cm and 0.4cm of n1l] (n2lr) {$x_5 < \theta_5$};
+\node[nodo, below left=0.9cm and 0.4cm of n1r]  (n2rl) {$x_6 < \theta_6$};
+\node[nodo, below right=0.9cm and 0.4cm of n1r] (n2rr) {$x_7 < \theta_7$};
+
+% --- Nivel 3 (hojas) ---
+\node[hoja, below left=0.8cm and 0.1cm of n2ll]  (h1) {$\hat{y}_1$};
+\node[hoja, below right=0.8cm and 0.1cm of n2ll] (h2) {$\hat{y}_2$};
+\node[hoja, below left=0.8cm and 0.1cm of n2lr]  (h3) {$\hat{y}_3$};
+\node[hoja, below right=0.8cm and 0.1cm of n2lr] (h4) {$\hat{y}_4$};
+\node[hoja, below left=0.8cm and 0.1cm of n2rl]  (h5) {$\hat{y}_5$};
+\node[hoja, below right=0.8cm and 0.1cm of n2rl] (h6) {$\hat{y}_6$};
+\node[hoja, below left=0.8cm and 0.1cm of n2rr]  (h7) {$\hat{y}_7$};
+\node[hoja, below right=0.8cm and 0.1cm of n2rr] (h8) {$\hat{y}_8$};
+
+% --- Flechas nivel 0 → 1 ---
+\draw[arr] (n0.south) -- (n1l.north) node[etiq, midway, above left]{sí};
+\draw[arr] (n0.south) -- (n1r.north) node[etiq, midway, above right]{no};
+
+% --- Flechas nivel 1 → 2 ---
+\draw[arr] (n1l.south) -- (n2ll.north) node[etiq, midway, above left]{sí};
+\draw[arr] (n1l.south) -- (n2lr.north) node[etiq, midway, above right]{no};
+\draw[arr] (n1r.south) -- (n2rl.north) node[etiq, midway, above left]{sí};
+\draw[arr] (n1r.south) -- (n2rr.north) node[etiq, midway, above right]{no};
+
+% --- Flechas nivel 2 → hojas ---
+\draw[arr] (n2ll.south) -- (h1.north);
+\draw[arr] (n2ll.south) -- (h2.north);
+\draw[arr] (n2lr.south) -- (h3.north);
+\draw[arr] (n2lr.south) -- (h4.north);
+\draw[arr] (n2rl.south) -- (h5.north);
+\draw[arr] (n2rl.south) -- (h6.north);
+\draw[arr] (n2rr.south) -- (h7.north);
+\draw[arr] (n2rr.south) -- (h8.north);
+
+% --- Anotación de profundidad ---
+\node[left=0.3cm of n0,    font=\scriptsize, text=gray] {prof.\ 0};
+\node[left=0.3cm of n1l,   font=\scriptsize, text=gray] {prof.\ 1};
+\node[left=0.3cm of n2ll,  font=\scriptsize, text=gray] {prof.\ 2};
+\node[left=0.3cm of h1,    font=\scriptsize, text=gray] {prof.\ 3};
+
+\end{tikzpicture}}%
+\caption{Estructura de un árbol de decisión de profundidad \texttt{max\_depth=3}. Cada nodo interno evalúa una condición sobre una variable $x_j$ y un umbral $\theta$; las hojas (en verde) contienen la predicción $\hat{y}$ para los ejemplos que alcanzan ese nodo.}
+\label{fig:decision_tree}
+\end{figure}

@@ -1,12 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.17)  20 MAR 2026 18:41
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex 2026.3.17)  20 MAR 2026 18:36
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
-**./main.tex
-(main.tex
-LaTeX2e <2025-11-01>
-L3 programming layer <2025-12-24>
-(include/configuracioninicial.tex
+**\def\tikzexternalrealjob{main}\input{main}
+(main.tex (include/configuracioninicial.tex
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbook.cls
 Document Class: scrbook 2026/02/02 v3.49.2 KOMA-Script document class (book)
 
@@ -164,13 +161,10 @@ Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 217
 )
 Package scrlayer-scrpage Info: Makeing stand-alone element `pagehead' from
 (scrlayer-scrpage)             alias to `pageheadfoot' on input line 1106.
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
@@ -186,14 +180,11 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen155
 \Gm@layoutvoffset=\dimen156
 \Gm@dimlist=\toks18
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 )
@@ -202,16 +193,14 @@ fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 106.
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def
 File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
 )))
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/lscapeenhanced\lscapeen
 hanced.sty
 Package: lscapeenhanced 2024-04-16 v1.0 improved lscape package
-
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/xpatch\xpatch.sty
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/xpatch\xpatch.sty (C:\U
+sers\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2025-12-24 L3 programming layer (loader) 
 
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xet
@@ -226,8 +215,7 @@ Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
 e.sty
 Package: xparse 2025-10-09 L3 Experimental document command parser
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count287
 ))
@@ -242,8 +230,7 @@ Package: apacite 2013/07/21 v6.03 APA citation
 \bibparsep=\skip69
 \bibitemsep=\skip70
 \biblabelsep=\skip71
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip72
 \bibsep=\skip73
@@ -256,7 +243,6 @@ LaTeX Info: Redefining \citeyear on input line 735.
 ty) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2025/12/11 v25.17 The multilingual framework for LuaLaTeX, pdfLa
 TeX and XeLaTeX
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
 File: babel.def 2025/12/11 v25.17 Babel common definitions
 ))
@@ -264,7 +250,6 @@ File: babel.def 2025/12/11 v25.17 Babel common definitions
 .sty
 Package: polyglossia 2025/12/01 v2.9 Modern multilingual typesetting with XeLaT
 eX and LuaLaTeX
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
 Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 
@@ -286,11 +271,10 @@ X
 \l__fontspec_tmpa_dim=\dimen157
 \l__fontspec_tmpb_dim=\dimen158
 \l__fontspec_tmpc_dim=\dimen159
- (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg))
-)
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg
+)))
 
 Package polyglossia Warning: You have loaded both babel and polyglossia.
 (polyglossia)                The two packages are mutually exclusive!
@@ -308,10 +292,8 @@ File: gloss-spanish.ldf polyglossia: module for Spanish
 
 Package polyglossia Info: Default language is spanish
 
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics\color.sty
 Package: color 2025/01/14 v1.3e Standard LaTeX Color (DPC)
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
@@ -319,7 +301,6 @@ Package color Info: Driver file: xetex.def on input line 149.
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 ) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
@@ -356,7 +337,6 @@ Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LT@p@ftn=\toks19
 )
 Class scrbook Info: longtable captions redefined on input line 112.
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen161
@@ -376,8 +356,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count309
 \@lastruleclass=\count310
 \@thisrulewidth=\dimen173
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen174
 \ar@mcellbox=\box60
@@ -386,15 +365,13 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \extratabsurround=\skip78
 \backup@length=\skip79
 \ar@cellbox=\box61
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip80
 \multirow@cntb=\count311
 \multirow@dima=\skip81
 \bigstrutjot=\dimen176
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \c@tracingmulticols=\count312
 \mult@box=\box62
@@ -464,8 +441,7 @@ Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \colbreak@box=\box107
 \mc@col@check@num=\count321
 \g__mc_curr_col_int=\count322
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@col@width=\dimen186
 \TX@old@table=\dimen187
@@ -474,8 +450,7 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@delta=\dimen190
 \TX@cols=\count323
 \TX@ftn=\toks21
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
 Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \CenteringLeftskip=\skip84
 \RaggedLeftLeftskip=\skip85
@@ -493,8 +468,8 @@ Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \JustifyingParindent=\skip97
 )
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.
 sty
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
 y
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
@@ -508,15 +483,15 @@ y
 \pgfutil@abb=\box108
 )
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
-code.tex
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+code.tex (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revi
+sion.tex)
 Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
 ))
 Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
 
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
-sty
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+sty (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.s
+ty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@height=\dimen193
 \Gin@req@width=\dimen194
@@ -753,8 +728,8 @@ y
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
 ty
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
-.code.tex))
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+.code.tex)) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pg
+fmath.sty
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
 .tex))
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
@@ -946,8 +921,8 @@ aryintersections.code.tex
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryfpu.code.tex)
 \pgf@intersect@solutions=\count347
-))
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty
+)) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.st
+y
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.rev
 ision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
@@ -1119,8 +1094,7 @@ Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
 ty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -1133,16 +1107,14 @@ kage
 with kernel methods
 )
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
-z/libraries\tikzexternalshared.code.tex)))
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/caption\subcaption.sty
+z/libraries\tikzexternalshared.code.tex))) (C:\Users\cmgce\AppData\Local\Progra
+ms\MiKTeX\tex/latex/caption\subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
 Package tocbasic Info: Loading of class-dependent code for package caption3
 (tocbasic)             prevented on line 50.
-
 
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
@@ -1158,7 +1130,6 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \c@caption@flags=\count359
 \c@continuedfloat=\count360
 Package caption Info: longtable package is loaded.
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 ))
@@ -1172,15 +1143,12 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/setspaceenhanced\setspa
 ceenhanced.sty
 Package: setspaceenhanced 2024-11-12 v1.04 improved setspace package
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/xltxtra\xltxtra.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/xltxtra\xltxtra.sty
 Package: xltxtra 2018/12/31 v0.7 Improvements for the "XeLaTeX" format
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 )
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/realscripts\realscripts
@@ -1188,8 +1156,7 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 Package: realscripts 2016/02/13 v0.3d Access OpenType subscripts and superscrip
 ts
 \subsupersep=\dimen326
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/metalogo\metalogo.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/metalogo\metalogo.sty
 Package: metalogo 2010/05/29 v0.12 Extended TeX logo macros
 \xl@everylogo=\toks41
 \xl@@everylogo=\toks42
@@ -1207,8 +1174,7 @@ LaTeX Info: Redefining \LaTeXe on input line 219.
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
 Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/textpos\textpos.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/textpos\textpos.sty
 Package: textpos 2022/07/23 v1.10.1
 Package textpos Info: choosing support for LaTeX3 on input line 60.
 \TP@textbox=\box146
@@ -1216,7 +1182,6 @@ Package textpos Info: choosing support for LaTeX3 on input line 60.
 \TPVertModule=\dimen328
 \TP@margin=\dimen329
 \TP@absmargin=\dimen330
-
 Grid set 16 x 16 = 37.34424pt x 52.81541pt
 \TPboxrulesize=\dimen331
 \TP@tbargs=\toks43
@@ -1227,8 +1192,7 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \fb@frh=\dimen333
 \FrameRule=\dimen334
 \FrameSep=\dimen335
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/mdframed\mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
 
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
@@ -1236,10 +1200,9 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-))
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.sty
+)) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-abspage.st
+y
 Package: zref-abspage 2026-03-07 v2.37 Module abspage for zref (HO)
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/zref\zref-base.sty
 Package: zref-base 2026-03-07 v2.37 Module base for zref (HO)
 
@@ -1350,14 +1313,11 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \c@mdf@env@ii=\count368
 \c@mdf@zref@counter=\count369
 Package zref Info: New property: mdf@pagevalue on input line 895.
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
 Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
 \calc@Acount=\count370
 \calc@Bcount=\count371
@@ -1369,8 +1329,7 @@ LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
 \calc@Ccount=\count372
 \calc@Cskip=\skip168
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
 Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 \ESO@tempdima=\dimen338
 \ESO@tempdimb=\dimen339
@@ -1378,7 +1337,6 @@ Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 \AM@pagewidth=\dimen340
 \AM@pageheight=\dimen341
 \AM@fboxrule=\dimen342
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\ppxetex.def
 File: ppxetex.def 2025/07/23 v0.6g Pdfpages driver for XeTeX (AM)
 )
@@ -1390,12 +1348,10 @@ File: ppxetex.def 2025/07/23 v0.6g Pdfpages driver for XeTeX (AM)
 \AM@lof@heading=\toks46
 \c@AM@survey=\count375
 \AM@templatesizebox=\box153
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
 
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.s
@@ -1405,7 +1361,6 @@ Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 ) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
@@ -1423,13 +1378,13 @@ Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
 \@linkdim=\dimen343
 \Hy@linkcounter=\count377
 \Hy@pagecounter=\count378
- (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
 ) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count379
- (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 )
 Package hyperref Info: Hyper figures OFF on input line 4195.
@@ -1442,7 +1397,6 @@ Package hyperref Info: Bookmarks ON on input line 4462.
 \c@Hy@tempcnt=\count380
 LaTeX Info: Redefining \url on input line 4801.
 \XeTeXLinkMargin=\dimen344
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
@@ -1466,7 +1420,6 @@ Package hyperref Info: PDF/A mode OFF on input line 6108.
 \c@Hfootnote=\count384
 )
 Package hyperref Info: Driver (autodetected): hxetex.
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hxetex.def
 File: hxetex.def 2025-07-12 v7.01o Hyperref driver for XeTeX
 \pdfm@box=\box154
@@ -1487,8 +1440,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 84.
 )
 \Hy@SectionHShift=\skip169
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count389
 \float@exts=\toks47
@@ -1499,35 +1451,30 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/floatbytocbasic\floatby
 tocbasic.sty
 Package: floatbytocbasic 2023-08-16 v1.0 improved float package using tocbasic
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
 Package: placeins 2005/04/18  v 2.2
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\afterpage.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\afterpage.sty
 Package: afterpage 2023/07/04 v1.08 After-Page Package (DPC)
 \AP@output=\toks49
 \AP@partial=\box157
 \AP@footins=\box158
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks50
 \verbatim@line=\toks51
 \verbatim@in@stream=\read3
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/xstring\xstring.sty (
+C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/xstring\xstring.tex
 \xs_counta=\count390
 \xs_countb=\count391
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
 ) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/xifthen\xifthen.sty
 Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/ifmtarg\ifmtarg.sty
 Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
-))
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics\rotating.sty
+)) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/graphics\rotating.st
+y
 Package: rotating 2025/01/14 v2.16e rotated objects in LaTeX
 \c@r@tfl@t=\count392
 \rotFPtop=\skip170
@@ -1540,9 +1487,8 @@ Package: todonotes 2024/01/05 v1.1.7 Todonotes source and documentation.
 Package: todonotes 2024/01/05
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
-
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex (
+C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
 \XKV@toks=\toks53
 \XKV@tempa@toks=\toks54
 )
@@ -1558,16 +1504,13 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/glossaries/base\glossar
 ies.sty
 Package: glossaries 2026/03/06 v5.0 (NLCT)
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/mfirstuc\mfirstuc.sty
 Package: mfirstuc 2025/04/03 v2.09 (NLCT)
 \@glsmfirst=\toks55
 \@glsmrest=\toks56
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/xfor\xfor.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/xfor\xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks57
 \ex@=\dimen347
@@ -1589,18 +1532,16 @@ saries-spanish-utf8.ldf))
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/datatool\datatool-base.
 sty
 Package: datatool-base 2025/12/04 v3.4.3 (NLCT)
- (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip172
 For additional information on amsmath, use the `?' option.
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen348
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count395
@@ -1689,7 +1630,6 @@ File: datatool-utf8.ldf 2025/12/04 v3.4.3 (NLCT)
 \l__datatool_prefix_int=\count427
 \l__datatool_suffix_int=\count428
 \@dtl@foreach@level=\count429
-
 
 Package tracklang Warning: No `datatool' support for dialect `spainspanish'  on
  input line 9924.
@@ -1798,7 +1738,6 @@ Package: amsthm 2020/05/29 v2.20.6
 \dth@everypar=\toks73
 )
 Class scrbook Info: amsthm's \deferred@thm@head patched.
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
@@ -1806,11 +1745,9 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/tools\bm.sty
 Package: bm 2025/10/21 v1.2g Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup6
 \symboldletters=\mathgroup7
@@ -1819,38 +1756,31 @@ Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
 Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\mathrsfs.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup9
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/units\nicefrac.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/units\nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
 \L@UnitsRaiseDisplaystyle=\skip188
 \L@UnitsRaiseTextstyle=\skip189
 \L@UnitsRaiseScriptstyle=\skip190
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/was\upgreek.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/was\upgreek.sty
 Package: upgreek 2003/02/12 v2.0 (WaS)
 Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
 \symugrf@m=\mathgroup10
 LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
 (Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/bigints\bigints.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/bigints\bigints.sty
 Package: bigints 2010/02/15 Writing big integrals
 Package bigints Info: This is Bigints by Merciadri Luca. on input line 5.
-)
-(include/estiloscodigoprogramacion.tex
+) (include/estiloscodigoprogramacion.tex
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/matlab-prettifier\matla
 b-prettifier.sty
 Package: matlab-prettifier 2014/06/19 v0.3 A package for prettyprinting Matlab 
 source code
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/base\textcomp.sty
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count437
 \lst@gtempboxa=\box165
 \lst@token=\toks74
@@ -1863,17 +1793,14 @@ Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
 \lst@newlines=\count441
 \lst@lineno=\count442
 \lst@maxwidth=\dimen390
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 \c@lstnumber=\count443
 \lst@skipnumbers=\count444
 \lst@framebox=\box166
-)
-(C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+) (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
 Package: listings 2025/11/14 1.11b (Carsten Heinz)
@@ -1895,9 +1822,13 @@ Package: listings 2025/11/14 1.11b (Carsten Heinz)
 \c@ejemplo=\count449
 \c@definicion=\count450
 )
-\openout3 = `main.auxlock'.
+No auxiliary output files.
 
- (include/configuraciontitulacion.tex)
+\w@pgfexternal@auxout=\write4
+Package TikZ externalization: calling \geometry{driver=none} during externaliza
+tion.
+
+(include/configuraciontitulacion.tex)
 Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           Using `bookmark' together with `hyperref' is recommended,
 (scrbook)           because of handling of possible bookmark level gaps.
@@ -1906,7 +1837,6 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
 (scrbook)           before \begin{document} on input line 88.
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 
@@ -1914,9 +1844,8 @@ Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 f
 File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
 \BKM@id=\count451
-)) (main.aux)
-\openout1 = `main.aux'.
-
+))
+No file archivos/figuras-procesadas/main-figure0.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
 LaTeX Font Info:    ... okay on input line 88.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
@@ -1947,11 +1876,9 @@ Package scrbase Info: activating spanish \listfigurename on input line 88.
 Package scrbase Info: activating spanish \listtablename on input line 88.
 Package scrbase Info: activating spanish \bibname on input line 88.
 Package scrbase Info: activating spanish \indexname on input line 88.
-
-*geometry* driver: auto-detecting
-*geometry* detected driver: xetex
+*geometry* detected driver: <none>
 *geometry* verbose mode - [ preamble ] result:
-* driver: xetex
+* driver: \Gm@driver 
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -2045,7 +1972,6 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 88.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 88.
-
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
@@ -2067,7 +1993,10 @@ F (HO)
 Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
 
 ))
+\providecommand\hyper@newdestlabel[2]{}
 Package hyperref Info: Link coloring OFF on input line 88.
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 
 Package todonotes Warning: The length marginparwidth is less than 2cm and will 
@@ -2105,7 +2034,7 @@ Package fontspec Info:
 e=dflt;"
 
 *geometry* verbose mode - [ newgeometry ] result:
-* driver: xetex
+* driver: \Gm@driver 
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -2147,19 +2076,16 @@ File: include/logos-universidad/LogoEPSBlanco.eps Graphic file (type eps)
 <include/logos-universidad/LogoEPSBlanco.eps>
 LaTeX Font Info:    Trying to load font information for U+msa on input line 66.
 
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 66.
-
 
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 66
 .
-
 (C:\Users\cmgce\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
@@ -2199,19 +2125,9 @@ Invalid UTF-8 byte or sequence at line 83 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 83 replaced by U+FFFD.
 File: include/logos-universidad/LogoUABlanco.eps Graphic file (type eps)
 <include/logos-universidad/LogoUABlanco.eps>
-[1
-
-
-
-
-
-
-]) (include/portada/portada_bn.tex [2
-
-
-]
+) (include/portada/portada_bn.tex
 *geometry* verbose mode - [ newgeometry ] result:
-* driver: xetex
+* driver: \Gm@driver 
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -2243,7 +2159,6 @@ File: include/logos-universidad/LogoUABlanco.eps Graphic file (type eps)
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-
 ! LaTeX Error: There's no line here to end.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -2256,361 +2171,13 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-
-Overfull \hbox (17.92543pt too wide) in paragraph at lines 19--25
-| $[]$ 
- []
-
-
-Overfull \hbox (20.35634pt too wide) in paragraph at lines 30--42
-|  $[]$ 
- []
-
-Invalid UTF-8 byte or sequence at line 52 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 52 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 52 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 52 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 52 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 52 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 52 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 52 replaced by U+FFFD.
-File: include/logos-titulaciones/LogoInformaticaNegro.eps Graphic file (type ep
-s)
-<include/logos-titulaciones/LogoInformaticaNegro.eps>
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 59 replaced by U+FFFD.
-File: include/logos-universidad/LogoEPSNegro.eps Graphic file (type eps)
-<include/logos-universidad/LogoEPSNegro.eps>
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 62 replaced by U+FFFD.
-File: include/logos-universidad/LogoUANegro.eps Graphic file (type eps)
-<include/logos-universidad/LogoUANegro.eps>
-
-Overfull \hbox (20.35634pt too wide) in paragraph at lines 47--67
-|  $[]$ 
- []
-
-[3
-
-]) [4
-
-
-
-] (main.toc [5])
-\tf@toc=\write4
-\openout4 = `main.toc'.
-
- [6] (main.lof [7
-
-
-])
-\tf@lof=\write5
-\openout5 = `main.lof'.
-
- [8] (main.lot)
-\tf@lot=\write6
-\openout6 = `main.lot'.
-
- [9
-
-
-] [10
-
-
-]
-(capitulos/Introduccion.tex
-chapter 1.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
-
-
-]
-[2]) (capitulos/marcoteorico.tex [3] [4
-
-
-]
-chapter 2.
-[5] [6]
-File: figures/gradientboosting.png Graphic file (type bmp)
-<figures/gradientboosting.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7]
-\openout3 = `main.auxlock'.
-
-
-===== 'mode=convert with system call': Invoking 'xelatex -enable-write18 -halt-
-on-error -interaction=batchmode -jobname "archivos/figuras-procesadas/main-figu
-re0" "\def\tikzexternalrealjob{main}\input{main}"' ========
-runsystem(xelatex -enable-write18 -halt-on-error -interaction=batchmode -jobnam
-e "archivos/figuras-procesadas/main-figure0" "\def\tikzexternalrealjob{main}\in
-put{main}")...disabled (restricted).
-
-\openout3 = `main.auxlock'.
-
-
-! Package tikz Error: Sorry, the system call 'xelatex -enable-write18 -halt-on-
-error -interaction=batchmode -jobname "archivos/figuras-procesadas/main-figure0
-" "\def\tikzexternalrealjob{main}\input{main}"' did NOT result in a usable outp
-ut file 'archivos/figuras-procesadas/main-figure0' (expected one of .pdf:.jpg:.
-jpeg:.png:.bmp:). Please verify that you have enabled system calls. For pdflate
-x, this is 'pdflatex -shell-escape'. Sometimes it is also named 'write 18' or s
-omething like that. Or maybe the command simply failed? Error messages can be f
-ound in 'archivos/figuras-procesadas/main-figure0.log'. If you continue now, I'
-ll try to typeset the picture.
-
-See the tikz package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.133 \end{tikzpicture}}
-                        %
-This error message was generated by an \errmessage
-command, so I can't give any explicit help.
-Pretend that you're Hercule Poirot: Examine all clues,
-and deduce the truth by order and method.
-
-) (capitulos/metodologia.tex [8]
-chapter 3.
-
-Overfull \hbox (8.16628pt too wide) in paragraph at lines 28--39
- [][] 
- []
-
-[9
-
-
-] [10] [11] [12]) (capitulos/experimentos.tex [13] [14
-
-
-]
-chapter 4.
-
-Overfull \hbox (0.61766pt too wide) in paragraph at lines 16--17
-[]\TU/lmr/m/n/10.95 Los experimentos de XGBoost (Bloques 0–2) utilizan como fue
-nte única el dataset \TU/lmtt/m/n/10.95 dataset_
- []
-
-[15]
-File: figures/linear_es_real_vs_pred.png Graphic file (type bmp)
-<figures/linear_es_real_vs_pred.png>
-File: figures/linear_es_errors.png Graphic file (type bmp)
-<figures/linear_es_errors.png>
- [16]
-File: figures/linear_multivar_es_real_vs_pred.png Graphic file (type bmp)
-<figures/linear_multivar_es_real_vs_pred.png>
-File: figures/linear_multivar_es_errors.png Graphic file (type bmp)
-<figures/linear_multivar_es_errors.png>
- [17]
-File: figures/bloque 0/xgboost_base_es_real_vs_pred.png Graphic file (type bmp)
-
-<figures/bloque 0/xgboost_base_es_real_vs_pred.png>
-File: figures/bloque 0/xgboost_ext_es_real_vs_pred.png Graphic file (type bmp)
-<figures/bloque 0/xgboost_ext_es_real_vs_pred.png>
-File: figures/bloque 0/xgboost_base_fr_real_vs_pred.png Graphic file (type bmp)
-
-<figures/bloque 0/xgboost_base_fr_real_vs_pred.png>
-File: figures/bloque 0/xgboost_ext_fr_real_vs_pred.png Graphic file (type bmp)
-<figures/bloque 0/xgboost_ext_fr_real_vs_pred.png>
- [18]
-File: figures/bloque 0/xgboost_base_it_real_vs_pred.png Graphic file (type bmp)
-
-<figures/bloque 0/xgboost_base_it_real_vs_pred.png>
-File: figures/bloque 0/xgboost_ext_it_real_vs_pred.png Graphic file (type bmp)
-<figures/bloque 0/xgboost_ext_it_real_vs_pred.png>
-File: figures/bloque 0/xgboost_ext_es_feature_importance.png Graphic file (type
- bmp)
-<figures/bloque 0/xgboost_ext_es_feature_importance.png>
-File: figures/bloque 0/xgboost_ext_fr_feature_importance.png Graphic file (type
- bmp)
-<figures/bloque 0/xgboost_ext_fr_feature_importance.png>
- [19]
-File: figures/bloque 0/xgboost_ext_it_feature_importance.png Graphic file (type
- bmp)
-<figures/bloque 0/xgboost_ext_it_feature_importance.png>
- [20] [21]
-File: figures/bloque 1/panel_combined_base_es_real_vs_pred.png Graphic file (ty
-pe bmp)
-<figures/bloque 1/panel_combined_base_es_real_vs_pred.png>
-File: figures/bloque 1/panel_combined_ext_es_real_vs_pred.png Graphic file (typ
-e bmp)
-<figures/bloque 1/panel_combined_ext_es_real_vs_pred.png>
-File: figures/bloque 1/panel_combined_base_es_errors.png Graphic file (type bmp
-)
-<figures/bloque 1/panel_combined_base_es_errors.png>
-File: figures/bloque 1/panel_combined_ext_es_errors.png Graphic file (type bmp)
-
-<figures/bloque 1/panel_combined_ext_es_errors.png>
- [22]
-File: figures/bloque 1/panel_combined_base_fr_real_vs_pred.png Graphic file (ty
-pe bmp)
-<figures/bloque 1/panel_combined_base_fr_real_vs_pred.png>
-File: figures/bloque 1/panel_combined_ext_fr_real_vs_pred.png Graphic file (typ
-e bmp)
-<figures/bloque 1/panel_combined_ext_fr_real_vs_pred.png>
-File: figures/bloque 1/panel_combined_base_fr_errors.png Graphic file (type bmp
-)
-<figures/bloque 1/panel_combined_base_fr_errors.png>
-File: figures/bloque 1/panel_combined_ext_fr_errors.png Graphic file (type bmp)
-
-<figures/bloque 1/panel_combined_ext_fr_errors.png>
- [23]
-File: figures/bloque 1/panel_combined_base_it_real_vs_pred.png Graphic file (ty
-pe bmp)
-<figures/bloque 1/panel_combined_base_it_real_vs_pred.png>
-File: figures/bloque 1/panel_combined_ext_it_real_vs_pred.png Graphic file (typ
-e bmp)
-<figures/bloque 1/panel_combined_ext_it_real_vs_pred.png>
-File: figures/bloque 1/panel_combined_base_it_errors.png Graphic file (type bmp
-)
-<figures/bloque 1/panel_combined_base_it_errors.png>
-File: figures/bloque 1/panel_combined_ext_it_errors.png Graphic file (type bmp)
-
-<figures/bloque 1/panel_combined_ext_it_errors.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [24]
-File: figures/bloque 1/panel_combined_base_combined_feature_importance.png Grap
-hic file (type bmp)
-<figures/bloque 1/panel_combined_base_combined_feature_importance.png>
-File: figures/bloque 1/panel_combined_ext_combined_feature_importance.png Graph
-ic file (type bmp)
-<figures/bloque 1/panel_combined_ext_combined_feature_importance.png>
-
-[25]
-LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <14.4> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 470.
-
- [26]
-File: figures/bloque 2/panel_geo_base_es_real_vs_pred.png Graphic file (type bm
-p)
-<figures/bloque 2/panel_geo_base_es_real_vs_pred.png>
-File: figures/bloque 2/panel_geo_ext_es_real_vs_pred.png Graphic file (type bmp
-)
-<figures/bloque 2/panel_geo_ext_es_real_vs_pred.png>
-File: figures/bloque 2/panel_geo_base_es_errors.png Graphic file (type bmp)
-<figures/bloque 2/panel_geo_base_es_errors.png>
-File: figures/bloque 2/panel_geo_ext_es_errors.png Graphic file (type bmp)
-<figures/bloque 2/panel_geo_ext_es_errors.png>
- [27]
-Overfull \hbox (6.00513pt too wide) in paragraph at lines 575--580
-[]\TU/lmr/m/n/10.95 El modelo ampliado recupera la capacidad predictiva con un 
-MAE de 0.224, apenas 0.009 p.p.
- []
-
-File: figures/bloque 2/panel_geo_base_fr_real_vs_pred.png Graphic file (type bm
-p)
-<figures/bloque 2/panel_geo_base_fr_real_vs_pred.png>
-File: figures/bloque 2/panel_geo_ext_fr_real_vs_pred.png Graphic file (type bmp
-)
-<figures/bloque 2/panel_geo_ext_fr_real_vs_pred.png>
-File: figures/bloque 2/panel_geo_base_fr_errors.png Graphic file (type bmp)
-<figures/bloque 2/panel_geo_base_fr_errors.png>
-File: figures/bloque 2/panel_geo_ext_fr_errors.png Graphic file (type bmp)
-<figures/bloque 2/panel_geo_ext_fr_errors.png>
-[28]
-File: figures/bloque 2/panel_geo_base_it_real_vs_pred.png Graphic file (type bm
-p)
-<figures/bloque 2/panel_geo_base_it_real_vs_pred.png>
-File: figures/bloque 2/panel_geo_ext_it_real_vs_pred.png Graphic file (type bmp
-)
-<figures/bloque 2/panel_geo_ext_it_real_vs_pred.png>
-File: figures/bloque 2/panel_geo_base_it_errors.png Graphic file (type bmp)
-<figures/bloque 2/panel_geo_base_it_errors.png>
-File: figures/bloque 2/panel_geo_ext_it_errors.png Graphic file (type bmp)
-<figures/bloque 2/panel_geo_ext_it_errors.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [29]
-Overfull \hbox (21.2925pt too wide) in paragraph at lines 673--681
-[]\TU/lmr/m/n/10.95 En el modelo base (Figura []4.40[]), las variables económic
-as \TU/lmtt/m/n/10.95 unemployment_rate_l1 \TU/lmr/m/n/10.95 e \TU/lmtt/m/n/10.
-95 inflation_
- []
-
-File: figures/bloque 2/panel_geo_base_combined_feature_importance.png Graphic f
-ile (type bmp)
-<figures/bloque 2/panel_geo_base_combined_feature_importance.png>
-File: figures/bloque 2/panel_geo_ext_combined_feature_importance.png Graphic fi
-le (type bmp)
-<figures/bloque 2/panel_geo_ext_combined_feature_importance.png>
-[30]) (capitulos/app.tex [31] [32
-
-
-]
-chapter 5.
-[33]
-Overfull \hbox (55.40231pt too wide) in paragraph at lines 53--62
- [][] 
- []
-
-
-Overfull \hbox (1.2978pt too wide) in paragraph at lines 89--92
-[]\TU/lmr/m/n/10.95 Las visualizaciones se implementan con Plotly, que proporci
-ona interactividad nativa (zoom,
- []
-
-) (capitulos/conclusiones.tex [34]
-chapter 6.
-) (main.bbl [35
-
-
-] [36
-
-
-]
-chapter without number
-! Undefined control sequence.
-\CardinalNumeric ...se #1\sptext {a}\else \sptext 
-                                                  {a}\fi \fi 
-l.107   and practice}\ (\PrintOrdinal{3}
-                                        \ \BEd).
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 129--145
-[][] [] [][][][][][][][][][][][] [] [][][][][][][] [] [][][][] [] [][] [] [][][
-][][][][][][][][][][] [] [][][][][][][][][] [] [][][][][][][][][] [] [][][][][]
-[][][][] []
- []
-
-)
-
-Package caption Warning: Unused \captionsetup[lstlisting] on input line 74.
-See the caption package documentation for explanation.
-
-[37] (main.aux)
- ***********
-LaTeX2e <2025-11-01>
-L3 programming layer <2020/03/25>
- ***********
- ) 
+ 
 Here is how much of TeX's memory you used:
- 60317 strings out of 402987
- 1468847 string characters out of 5448524
- 2262673 words of memory out of 5000000
- 87965 multiletter control sequences out of 15000+600000
- 644054 words of font info for 138 fonts, out of 8000000 for 9000
+ 59212 strings out of 402987
+ 1430008 string characters out of 5448524
+ 2239558 words of memory out of 5000000
+ 86991 multiletter control sequences out of 15000+600000
+ 638094 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 113i,21n,114p,11306b,1009s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-Output written on main.pdf (47 pages).
+ 117i,9n,113p,11338b,759s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

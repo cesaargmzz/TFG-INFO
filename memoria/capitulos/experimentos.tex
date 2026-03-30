@@ -24,6 +24,8 @@ Se define una partición temporal coherente con un escenario real de predicción
 
 La evaluación se realiza fuera de muestra, utilizando como métricas el error absoluto medio (MAE) y la raíz del error cuadrático medio (RMSE). Ambas permiten cuantificar el error en puntos porcentuales de crecimiento trimestral.
 
+Cabe señalar que el conjunto de prueba comprende únicamente 8 trimestres por país. Este tamaño reducido implica que las métricas obtenidas pueden verse afectadas de forma significativa por uno o dos errores puntuales, y que las diferencias entre modelos deben interpretarse con cautela: lo que aquí se observa apunta a tendencias y patrones, pero no permite extraer conclusiones estadísticamente robustas sobre la superioridad de un modelo frente a otro.
+
 Los experimentos se estructuran en dos niveles. Primero se evalúan dos modelos de regresión lineal sobre España como punto de referencia interpretable. A continuación se presentan tres bloques de experimentos con XGBoost: el Bloque~0 entrena modelos independientes por país; el Bloque~1 combina los datos de los tres países en un único modelo de panel; el Bloque~2 extiende el Bloque~1 incorporando la variable de país como feature explícita mediante codificación \textit{one-hot}.
 
 En cada bloque de XGBoost se comparan dos configuraciones de features:
@@ -68,8 +70,8 @@ predice un crecimiento próximo a la media de entrenamiento en todos los trimest
 
 El gráfico de errores (Figura~\ref{fig:lin_es_err}) confirma esta limitación: todos los
 errores son positivos, lo que indica que el modelo subestima sistemáticamente el
-crecimiento real durante el periodo de prueba. Esto es una señal inequívoca de que la
-relación lineal entre desempleo y PIB no captura la dinámica de recuperación y estabilización
+crecimiento real durante el periodo de prueba. Esto apunta a que la
+relación lineal entre desempleo y PIB no logra capturar la dinámica de recuperación y estabilización
 que caracteriza el ciclo económico español en el periodo analizado.
 
 \begin{figure}[H]
@@ -153,12 +155,14 @@ el coeficiente estimado promedia fases de signo opuesto y degrada la predicción
 Estos resultados motivan el uso de XGBoost, que puede capturar relaciones no lineales entre
 las variables y el PIB, adaptar su respuesta según el nivel de las variables (lo que OLS
 no puede hacer con un único coeficiente), y aprovechar combinaciones de indicadores sin
-imponer una forma funcional rígida. Los experimentos de los Bloques 0--2 confirman que
-este salto en complejidad se traduce en una mejora consistente del error de predicción.
+imponer una forma funcional rígida. Los experimentos de los Bloques 0--2 apuntan a que
+este salto en complejidad se traduce en una mejora del error de predicción en la mayor parte de los escenarios analizados.
 
 % ══════════════════════════════════════════════════════════════════════
 \FloatBarrier
 \section{Bloque 0 --- Modelos por país}
+
+\textbf{Idea principal:} entrenar modelos independientes por país permite establecer una línea de referencia, y los resultados sugieren que no existe una configuración universalmente mejor: la configuración óptima parece depender de la economía analizada, lo que apunta a diferencias estructurales en la predictibilidad del ciclo de cada país.
 
 El primer bloque de experimentos entrena y evalúa los modelos de forma independiente para cada país, utilizando únicamente los datos propios de cada economía. Este enfoque permite establecer los resultados de referencia para cada país antes de explorar estrategias que combinen información de múltiples economías.
 
@@ -289,6 +293,8 @@ Adicionalmente, se observa una diferencia notable en la dificultad de predicció
 \FloatBarrier
 \section{Bloque 1 --- Modelo panel combinado}
 
+\textbf{Idea principal:} combinar los datos de los tres países en un único modelo parece reducir el sobreajuste observado en el Bloque~0, siendo el efecto más llamativo la recuperación del modelo ampliado para España (de MAE 0.796 a 0.297). El modelo panel ampliado parece ser la configuración más robusta del bloque, obteniendo resultados competitivos en los tres países de forma simultánea.
+
 El segundo bloque de experimentos entrena un único modelo XGBoost utilizando los datos de los tres países de forma conjunta, evaluando posteriormente el rendimiento de forma separada para cada economía. A diferencia del Bloque~0, donde cada modelo solo disponía de las observaciones de su propio país (aproximadamente 58 trimestres por economía), aquí el modelo de entrenamiento accede a las ~174 observaciones combinadas del panel completo.
 
 El objetivo de este enfoque es doble. Por un lado, aumentar el volumen de datos de entrenamiento para reducir el riesgo de sobreajuste, problema que afectó especialmente al modelo ampliado de España en el Bloque~0. Por otro, comprobar si los patrones macroeconómicos son suficientemente comunes entre las tres economías como para que un modelo compartido generalice mejor que tres modelos independientes.
@@ -318,7 +324,7 @@ Comparando con los resultados del Bloque~0 (Tabla~\ref{tab:bloque0}), el modelo 
 
 España es el país donde el cambio de estrategia produce el impacto más destacado. El modelo ampliado, que en el Bloque~0 presentaba el peor resultado para esta economía (MAE 0.796) debido a una predicción anómala de $-2.5$ p.p. en 2023Q4, pasa ahora a obtener el mejor resultado con MAE 0.297, superando incluso al modelo base del panel (MAE 0.363).
 
-Este comportamiento ilustra con claridad el efecto regularizador del mayor volumen de datos: al entrenar con las observaciones combinadas de los tres países, el modelo ampliado deja de memorizar los retardos del PIB español y adquiere una mayor capacidad de generalización. Las Figuras~\ref{fig:panel_base_es_pred} y~\ref{fig:panel_ext_es_pred} permiten apreciar visualmente esta mejora. El modelo base del panel (Figura~\ref{fig:panel_base_es_pred}) sigue con dificultad la aceleración del crecimiento español en 2024Q1 y tiende a subestimar los trimestres finales del periodo de prueba. El modelo ampliado del panel (Figura~\ref{fig:panel_ext_es_pred}), en cambio, captura mejor la tendencia general, aunque sobreestima el pico de 2024Q3 y no anticipa la moderación posterior.
+Este resultado apunta al efecto regularizador del mayor volumen de datos: al entrenar con las observaciones combinadas de los tres países, el modelo ampliado parece dejar de memorizar los retardos del PIB español y adquiere una mayor capacidad de generalización. Las Figuras~\ref{fig:panel_base_es_pred} y~\ref{fig:panel_ext_es_pred} permiten apreciar visualmente esta mejora. El modelo base del panel (Figura~\ref{fig:panel_base_es_pred}) sigue con dificultad la aceleración del crecimiento español en 2024Q1 y tiende a subestimar los trimestres finales del periodo de prueba. El modelo ampliado del panel (Figura~\ref{fig:panel_ext_es_pred}), en cambio, captura mejor la tendencia general, aunque sobreestima el pico de 2024Q3 y no anticipa la moderación posterior.
 
 Los errores de predicción, representados en las Figuras~\ref{fig:panel_base_es_err} y~\ref{fig:panel_ext_es_err}, muestran que ambos modelos producen errores de signo variable sin un sesgo sistemático claro. El modelo ampliado presenta errores más contenidos y distribuidos de forma más homogénea a lo largo del periodo de prueba, mientras que el modelo base acumula errores positivos crecientes hacia el final del horizonte.
 
@@ -459,7 +465,7 @@ En el modelo ampliado (Figura~\ref{fig:panel_feat_ext}), el retardo inmediato de
 \FloatBarrier
 \subsection{Síntesis del Bloque 1}
 
-El entrenamiento con datos combinados de los tres países produce mejoras generalizadas respecto al Bloque~0, siendo el efecto más significativo la rehabilitación del modelo ampliado para España, que pasa de ser el peor resultado individual (MAE 0.796) al mejor del bloque (MAE 0.297). Este resultado confirma que el sobreajuste observado en el Bloque~0 era fundamentalmente un problema de escasez de datos de entrenamiento, no una limitación inherente de las variables seleccionadas.
+El entrenamiento con datos combinados de los tres países produce mejoras generalizadas respecto al Bloque~0, siendo el efecto más significativo la rehabilitación del modelo ampliado para España, que pasa de ser el peor resultado individual (MAE 0.796) al mejor del bloque (MAE 0.297). Este resultado sugiere que el sobreajuste observado en el Bloque~0 podría estar relacionado principalmente con la escasez de datos de entrenamiento, más que con una limitación inherente de las variables seleccionadas.
 
 Desde una perspectiva metodológica, el modelo panel ampliado se consolida como la configuración más robusta del bloque: obtiene el mejor MAE en los tres países de forma simultánea, algo que ninguna configuración del Bloque~0 lograba. La tabla comparativa entre bloques ilustra esta consistencia: frente a la heterogeneidad de resultados del Bloque~0 ---donde la configuración óptima variaba según el país---, el modelo panel ampliado ofrece un resultado competitivo de forma uniforme.
 
@@ -468,6 +474,8 @@ Italia sigue siendo el país más difícil de predecir, con un MAE del modelo am
 % ══════════════════════════════════════════════════════════════════════
 \FloatBarrier
 \section{Bloque 2 --- Panel con variable \emph{geo} como feature}
+
+\textbf{Idea principal:} incorporar dummies de país resulta beneficioso únicamente cuando el modelo ya dispone de variables autorregresivas. Sin ellas, las dummies parecen sobreexplotarse y degradan gravemente las predicciones ---con un colapso extremo en Italia (MAE 4.324)---. El modelo ampliado con geo obtiene resultados similares o ligeramente superiores a los del Bloque~1.
 
 El tercer bloque de experimentos parte de la misma arquitectura del Bloque~1 pero introduce
 una modificación conceptualmente relevante: la variable de país se incorpora explícitamente
@@ -685,8 +693,8 @@ explicativa, reproduciendo el patrón dominante ya observado en los Bloques~0 y~
 resultado más importante desde la perspectiva de este bloque es que las tres dummies de
 país presentan ganancias marginales, inferiores a 0.3 frente a las $\approx$16 unidades del
 retardo del PIB. Una vez disponibles los retardos del PIB y los indicadores de actividad,
-el modelo prácticamente ignora la información de identidad nacional, lo que indica que la
-información geográfica ya está codificada de forma implícita en la dinámica autorregresiva
+el modelo prácticamente ignora la información de identidad nacional, lo que sugiere que la
+información geográfica podría estar ya codificada de forma implícita en la dinámica autorregresiva
 de cada economía.
 
 \begin{figure}[H]
@@ -725,17 +733,193 @@ resultado es una regresión hacia medias de entrenamiento específicas de cada p
 son representativas del periodo de prueba, con un deterioro especialmente grave en Francia
 y un colapso catastrófico en Italia (MAE 4.324 frente a 0.631 en el Bloque~1).
 
-Desde una perspectiva metodológica, este experimento confirma que las variables de
+Desde una perspectiva metodológica, este experimento apunta a que las variables de
 identidad categórica ---país, sector, empresa--- en modelos de series temporales
-macroeconómicas son secundarias respecto a las variables de estado autorregresivas. El nivel
+macroeconómicas podrían ser secundarias respecto a las variables de estado autorregresivas. El nivel
 reciente de actividad económica es un predictor mucho más informativo que la etiqueta del
 país al que pertenece la observación, y ningún mecanismo de codificación categórica puede
 sustituir esa información cuando no está disponible.
 
-El modelo ampliado del Bloque~2 (\texttt{panel\_geo\_ext}) se consolida como la
-configuración con mejor rendimiento agregado de todos los bloques, obteniendo
-simultáneamente el mejor MAE para España (0.290), el segundo mejor para Francia (0.224
-frente a 0.215 del Bloque~1) y el mejor para Italia (0.365 frente a 0.376 del Bloque~1).
-Estos resultados motivan la exploración del Bloque~3, donde se analizará la capacidad de
-transferencia entre economías entrenando con los datos de dos países y evaluando sobre el
-tercero.
+El modelo ampliado del Bloque~2 (\texttt{panel\_geo\_ext}) obtiene el mejor MAE para
+España (0.290) y para Italia (0.365) de todos los bloques hasta este punto, y un resultado
+prácticamente idéntico al Bloque~1 en Francia (0.224 frente a 0.215). Estos resultados
+motivan la exploración del Bloque~3, donde se analiza la capacidad de transferencia entre
+economías entrenando con los datos de dos países y evaluando sobre el tercero.
+
+% ══════════════════════════════════════════════════════════════════════
+\FloatBarrier
+\section{Bloque 3 --- Transferencia entre países}
+
+\textbf{Idea principal:} entrenar con dos países y evaluar en un tercero que no ha
+participado en el entrenamiento produce resultados sorprendentemente competitivos,
+sugiriendo que los patrones macroeconómicos del ciclo trimestral son parcialmente
+transferibles entre las economías analizadas.
+
+En los bloques anteriores el país de evaluación siempre había aportado datos al
+entrenamiento. El Bloque~3 rompe esta condición: se entrena un modelo XGBoost con la
+configuración ampliada usando los datos de dos países y se evalúa sobre el tercero, que
+no ha sido visto en ninguna fase del ajuste del modelo. Este diseño permite explorar si
+los patrones macroeconómicos aprendidos de dos economías son lo suficientemente generales
+como para generalizar a una tercera.
+
+Se ejecutan las tres combinaciones posibles:
+
+\begin{itemize}
+    \item \textbf{ES + FR → IT}: entrena con España y Francia, evalúa en Italia.
+    \item \textbf{ES + IT → FR}: entrena con España e Italia, evalúa en Francia.
+    \item \textbf{FR + IT → ES}: entrena con Francia e Italia, evalúa en España.
+\end{itemize}
+
+En todos los casos se utiliza la configuración de features ampliada
+(\texttt{gdp\_qoq\_pct\_l1}, \texttt{gdp\_qoq\_pct\_l2}, \texttt{unemployment\_rate\_l1},
+\texttt{inflation\_qoq\_pct\_l1}, \texttt{ipi\_qoq\_pct\_l1}, \texttt{retail\_qoq\_pct\_l1}),
+la misma partición temporal y los mismos hiperparámetros XGBoost de los bloques anteriores.
+La configuración base no se incluye en este bloque dado que su rendimiento sin variables
+autorregresivas fue consistentemente inferior en todos los experimentos previos.
+
+Los resultados obtenidos son los siguientes:
+
+\begin{table}[H]
+\centering
+\caption{Resultados del Bloque 3 --- Transferencia entre países (modelo ampliado)}
+\label{tab:bloque3}
+\small
+\begin{tabular}{llcc}
+\hline
+\textbf{Entrenado con} & \textbf{Evaluado en} & \textbf{MAE} & \textbf{RMSE} \\
+\hline
+ES + FR & Italia  & 0.311 & 0.344 \\
+ES + IT & Francia & 0.220 & 0.362 \\
+FR + IT & España  & 0.337 & 0.367 \\
+\hline
+\end{tabular}
+\end{table}
+
+Para contextualizar estos valores, la Tabla~\ref{tab:comparativa_final} recoge los
+resultados del modelo ampliado en todos los bloques para los tres países.
+
+\begin{table}[H]
+\centering
+\caption{Comparativa del modelo ampliado entre todos los bloques}
+\label{tab:comparativa_final}
+\small
+\begin{tabular}{lcccccc}
+\hline
+ & \multicolumn{2}{c}{\textbf{España}} & \multicolumn{2}{c}{\textbf{Francia}} & \multicolumn{2}{c}{\textbf{Italia}} \\
+\textbf{Bloque} & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} & \textbf{MAE} & \textbf{RMSE} \\
+\hline
+B0 — Por país       & 0.796 & 1.285 & 0.193 & 0.208 & 0.344 & 0.455 \\
+B1 — Panel combinado & 0.297 & 0.331 & 0.215 & 0.256 & 0.376 & 0.466 \\
+B2 — Panel con geo  & 0.290 & 0.331 & 0.224 & 0.270 & 0.365 & 0.451 \\
+B3 — Transferencia  & 0.337 & 0.367 & 0.220 & 0.362 & 0.311 & 0.344 \\
+\hline
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+\subsection{Italia (ES+FR → IT)}
+
+Italia es el resultado más llamativo del bloque. El modelo entrenado exclusivamente con
+datos de España y Francia obtiene un MAE de 0.311 sobre Italia, mejorando tanto el
+resultado del Bloque~0 con datos italianos propios (MAE 0.344) como los de los Bloques~1
+y~2 (0.376 y 0.365 respectivamente). Este resultado apunta a que los patrones del ciclo
+económico trimestral de España y Francia capturan regularidades compartidas con Italia
+que no quedaban bien representadas cuando el modelo disponía únicamente de las~58
+observaciones italianas de entrenamiento.
+
+La Figura~\ref{fig:b3_it_pred} muestra que el modelo sigue razonablemente la dirección
+del crecimiento italiano, sin producir predicciones anómalas extremas como las observadas
+en el modelo base del Bloque~2.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/bloque 3/panel_transfer_ext_it_real_vs_pred.png}
+    \caption{PIB QoQ real vs predicción -- Transfer ES+FR → IT (test)}
+    \label{fig:b3_it_pred}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/bloque 3/panel_transfer_ext_it_errors.png}
+    \caption{Errores de predicción -- Transfer ES+FR → IT (test)}
+    \label{fig:b3_it_err}
+\end{minipage}
+\end{figure}
+
+\FloatBarrier
+\subsection{Francia (ES+IT → FR)}
+
+Francia obtiene un MAE de 0.220 en transferencia, prácticamente idéntico al 0.215 del
+Bloque~1. Este resultado sugiere que los patrones de España e Italia son suficientes para
+estimar el crecimiento francés con una precisión comparable a la del modelo entrenado con
+todos los países, incluyendo Francia. La Figura~\ref{fig:b3_fr_pred} muestra un ajuste
+similar al de bloques anteriores, con errores contenidos en la mayor parte del horizonte
+de prueba.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/bloque 3/panel_transfer_ext_fr_real_vs_pred.png}
+    \caption{PIB QoQ real vs predicción -- Transfer ES+IT → FR (test)}
+    \label{fig:b3_fr_pred}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/bloque 3/panel_transfer_ext_fr_errors.png}
+    \caption{Errores de predicción -- Transfer ES+IT → FR (test)}
+    \label{fig:b3_fr_err}
+\end{minipage}
+\end{figure}
+
+\FloatBarrier
+\subsection{España (FR+IT → ES)}
+
+España obtiene un MAE de 0.337 en transferencia, superior al 0.290--0.297 de los
+Bloques~1 y~2, pero muy por debajo del 0.796 que obtenía el modelo ampliado del Bloque~0
+con datos españoles propios. La Figura~\ref{fig:b3_es_pred} muestra que el modelo captura
+la tendencia general del crecimiento español, aunque con mayor imprecisión que cuando
+disponía de datos nacionales en el entrenamiento.
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/bloque 3/panel_transfer_ext_es_real_vs_pred.png}
+    \caption{PIB QoQ real vs predicción -- Transfer FR+IT → ES (test)}
+    \label{fig:b3_es_pred}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/bloque 3/panel_transfer_ext_es_errors.png}
+    \caption{Errores de predicción -- Transfer FR+IT → ES (test)}
+    \label{fig:b3_es_err}
+\end{minipage}
+\end{figure}
+
+\FloatBarrier
+\subsection{Síntesis del Bloque 3}
+
+Los resultados del Bloque~3 apuntan a que los patrones macroeconómicos del ciclo
+trimestral presentan un grado de transferibilidad entre estas tres economías europeas
+mayor del que cabría esperar a priori. En los tres experimentos el modelo obtiene errores
+competitivos sin haber visto ningún dato del país de evaluación durante el entrenamiento.
+
+El hallazgo más destacado es el de Italia: el modelo entrenado con ES+FR parece generalizar
+mejor a Italia que los modelos entrenados con datos italianos propios en los Bloques~0,
+1 y~2. Esto sugiere que la limitada cantidad de observaciones italianas disponibles
+introduce más ruido que señal en los bloques donde Italia participa en el entrenamiento,
+y que los patrones de España y Francia capturan regularidades cíclicas compartidas que
+resultan útiles para estimar el crecimiento italiano.
+
+Para Francia y España, la transferencia produce resultados ligeramente inferiores a los
+de los bloques con datos propios (Bloques~1 y~2), lo que es coherente con lo esperado:
+la información del propio país durante el entrenamiento aporta valor, pero su ausencia
+no impide que el modelo mantenga una capacidad predictiva razonable.
+
+En conjunto, estos resultados apuntan a que los lags del PIB y los indicadores de
+actividad económica codifican regularidades del ciclo macroeconómico que son
+parcialmente compartidas entre estas economías, lo que podría tener implicaciones
+prácticas en contextos donde los datos históricos de un país son escasos o de baja
+calidad.

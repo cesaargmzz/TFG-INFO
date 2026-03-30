@@ -14,6 +14,7 @@ BLOQUE_OPTIONS = {
     "Bloque 0 — Por país": 0,
     "Bloque 1 — Panel combinado": 1,
     "Bloque 2 — Panel con geo como feature": 2,
+    "Bloque 3 — Transferencia entre países": 3,
 }
 
 st.set_page_config(page_title="TFG Dashboard — PIB QoQ", layout="wide")
@@ -49,10 +50,14 @@ elif bloque == 1:
         "Panel combinado (base)": "base",
         "Panel combinado (ampliado)": "ext",
     }
-else:
+elif bloque == 2:
     model_options = {
         "Panel geo (base)": "base",
         "Panel geo (ampliado)": "ext",
+    }
+else:  # bloque == 3
+    model_options = {
+        "Transfer (ampliado)": "ext",
     }
 model_label = st.sidebar.selectbox("Modelo", list(model_options.keys()), index=0)
 model_key = model_options[model_label]
@@ -73,20 +78,25 @@ elif bloque == 1:
     pred_base_path = REPORTS_DIR / f"predictions_panel_combined_base_{geo_lower}.csv"
     pred_ext_path  = REPORTS_DIR / f"predictions_panel_combined_ext_{geo_lower}.csv"
     fig_subdir     = FIGURES_DIR / "bloque1"
-else:
+elif bloque == 2:
     metrics_path   = REPORTS_DIR / "metrics_panel_geo_compare.csv"
     pred_base_path = REPORTS_DIR / f"predictions_panel_geo_base_{geo_lower}.csv"
     pred_ext_path  = REPORTS_DIR / f"predictions_panel_geo_ext_{geo_lower}.csv"
     fig_subdir     = FIGURES_DIR / "bloque2"
+else:  # bloque == 3
+    metrics_path   = REPORTS_DIR / "metrics_panel_transfer_compare.csv"
+    pred_base_path = None
+    pred_ext_path  = REPORTS_DIR / f"predictions_panel_transfer_ext_{geo_lower}.csv"
+    fig_subdir     = FIGURES_DIR / "bloque3"
 
 # --- Load data ---
 metrics_raw = load_csv(metrics_path)
-if bloque in (1, 2) and "geo" in metrics_raw.columns:
+if bloque in (1, 2, 3) and "geo" in metrics_raw.columns:
     metrics = metrics_raw[metrics_raw["geo"] == geo].reset_index(drop=True)
 else:
     metrics = metrics_raw
 
-pred_base = safe_period_str(load_csv(pred_base_path))
+pred_base = safe_period_str(load_csv(pred_base_path)) if pred_base_path else None
 pred_ext  = safe_period_str(load_csv(pred_ext_path))
 
 # --- Title (dynamic) ---
@@ -94,7 +104,7 @@ st.title(f"Dashboard — Predicción del PIB QoQ · {geo} ({GEO_LABELS[geo]}) ·
 st.caption("Visualización interactiva de resultados de modelos (CSV generados por el pipeline).")
 
 # --- Select predictions ---
-if model_key == "base":
+if model_key == "base" and pred_base is not None:
     preds = pred_base.copy()
     metrics_row = metrics[metrics["model"].str.contains("base", case=False, na=False)]
 else:
@@ -116,6 +126,10 @@ kpi3.metric("RMSE (p.p.)", f"{rmse_val:.3f}" if rmse_val is not None else "—")
 
 if n_features is not None:
     st.caption(f"Nº de variables: {n_features}")
+
+if bloque == 3 and "train_geos" in metrics_row.columns and not metrics_row.empty:
+    train_geos_val = metrics_row["train_geos"].iloc[0]
+    st.info(f"Entrenado con: **{train_geos_val}** — evaluado en **{geo}** (país no visto durante el entrenamiento)")
 
 st.divider()
 

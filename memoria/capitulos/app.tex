@@ -5,9 +5,11 @@
 
 Con el fin de facilitar el análisis e interpretación de los resultados obtenidos en los experimentos, se ha desarrollado una aplicación web interactiva que permite visualizar de forma dinámica las predicciones generadas por los modelos.
 
-La aplicación no realiza entrenamiento en tiempo real, sino que consume los archivos generados automáticamente por el pipeline de modelado (ficheros CSV ubicados en el directorio \texttt{reports/}). De este modo, se mantiene una clara separación entre la fase de entrenamiento y la fase de visualización.
+El volumen de resultados que produce el diseño experimental ---tres bloques, tres países y dos configuraciones de features, lo que da lugar a 18 combinaciones distintas--- hace que la comparación directa a partir de los ficheros CSV sea poco práctica. La aplicación centraliza toda esa información en una interfaz unificada que permite cambiar de bloque, país o configuración de modelo con un clic, facilitando la identificación de patrones y diferencias entre experimentos sin necesidad de abrir archivos individuales.
 
-Esta arquitectura garantiza reproducibilidad, modularidad y simplicidad en el mantenimiento del sistema.
+La aplicación no realiza entrenamiento en tiempo real, sino que consume los archivos generados automáticamente por el pipeline de modelado (ficheros CSV ubicados en el directorio \texttt{reports/}). De este modo, se mantiene una clara separación entre la fase de entrenamiento y la fase de visualización, lo que garantiza reproducibilidad y simplifica el mantenimiento del sistema.
+
+Es importante señalar que la aplicación está concebida como una herramienta de exploración y demostración de los resultados del proyecto, no como una aplicación orientada a usuarios finales. No incluye mecanismos de autenticación, gestión de errores exhaustiva ni documentación integrada de cara al usuario, aspectos que serían necesarios en un despliegue de producción. Su propósito es acompañar la memoria como soporte visual interactivo de los experimentos realizados.
 
 \section{Arquitectura del sistema}
 
@@ -79,6 +81,18 @@ Una vez cargados los datos, el área principal muestra:
     \item \textbf{Tablas opcionales}: predicciones completas y métricas comparativas,
           activables mediante checkbox en la barra lateral.
 \end{itemize}
+
+La Figura~\ref{fig:app_screenshot} muestra la interfaz de la aplicación con el Bloque~0
+seleccionado, modelo XGBoost base para España. En la parte superior se muestran los
+indicadores KPI (modelo activo, MAE y RMSE), y en el área principal las gráficas de
+predicción y error trimestre a trimestre.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/app_screenshot.png}
+\caption{Interfaz de la aplicación web --- Bloque~0, XGBoost base (ES)}
+\label{fig:app_screenshot}
+\end{figure}
 
 \section{Decisiones técnicas}
 

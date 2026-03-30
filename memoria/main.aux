@@ -50,6 +50,8 @@
 \citation{chen_guestrin_2016}
 \citation{chen_guestrin_2016}
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}XGBoost}{8}{section.2.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Estructura de un árbol de decisión de profundidad \texttt  {max\_depth=3}. Cada nodo interno evalúa una condición sobre una variable $x_j$ y un umbral $\theta $; las hojas (en verde) contienen la predicción $\hat  {y}$ para los ejemplos que alcanzan ese nodo.}}{8}{figure.caption.5}\protected@file@percent }
+\newlabel{fig:decision_tree}{{2.2}{8}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Estructura de un árbol de decisión de profundidad \texttt {max\_depth=3}. Cada nodo interno evalúa una condición sobre una variable $x_j$ y un umbral $\theta $; las hojas (en verde) contienen la predicción $\hat {y}$ para los ejemplos que alcanzan ese nodo}{figure.caption.5}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Metodología}{9}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -57,8 +59,8 @@
 \newlabel{metodologia}{{3}{9}{Metodología}{chapter.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Fuentes de datos}{9}{section.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Indicadores económicos utilizados}{9}{section.3.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Indicadores macroeconómicos utilizados y sus fuentes en Eurostat}}{9}{table.caption.5}\protected@file@percent }
-\newlabel{tab:fuentes}{{3.1}{9}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Indicadores macroeconómicos utilizados y sus fuentes en Eurostat}{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Indicadores macroeconómicos utilizados y sus fuentes en Eurostat}}{9}{table.caption.6}\protected@file@percent }
+\newlabel{tab:fuentes}{{3.1}{9}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Indicadores macroeconómicos utilizados y sus fuentes en Eurostat}{table.caption.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Construcción del dataset}{10}{section.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Transformación de variables}{10}{section.3.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Transformación del PIB}{10}{subsection.3.4.1}\protected@file@percent }
@@ -68,8 +70,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.6}Modelos empleados}{12}{section.3.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Regresión lineal ordinaria (OLS)}{12}{subsection.3.6.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}Modelo basado en Gradient Boosting (XGBoost)}{12}{subsection.3.6.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Hiperparámetros del modelo XGBoost}}{12}{table.caption.6}\protected@file@percent }
-\newlabel{tab:xgb_params}{{3.2}{12}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Hiperparámetros del modelo XGBoost}{table.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Hiperparámetros del modelo XGBoost}}{12}{table.caption.7}\protected@file@percent }
+\newlabel{tab:xgb_params}{{3.2}{12}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Hiperparámetros del modelo XGBoost}{table.caption.7}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.7}Métricas de evaluación}{13}{section.3.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Experimentos}{15}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -79,115 +81,115 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Diseño experimental}{15}{section.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}Modelos de referencia --- Regresión lineal}{15}{section.4.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Modelo univariante}{16}{subsection.4.2.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- Lineal univariante (ES, test)}}{16}{figure.caption.7}\protected@file@percent }
-\newlabel{fig:lin_es_pred}{{4.1}{16}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- Lineal univariante (ES, test)}{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- Lineal univariante (ES, test)}}{16}{figure.caption.7}\protected@file@percent }
-\newlabel{fig:lin_es_err}{{4.2}{16}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- Lineal univariante (ES, test)}{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- Lineal univariante (ES, test)}}{16}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:lin_es_pred}{{4.1}{16}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- Lineal univariante (ES, test)}{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- Lineal univariante (ES, test)}}{16}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:lin_es_err}{{4.2}{16}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- Lineal univariante (ES, test)}{figure.caption.8}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Modelo multivariante}{16}{subsection.4.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- Lineal multivariante (ES, test)}}{17}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:lin_multivar_pred}{{4.3}{17}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- Lineal multivariante (ES, test)}{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- Lineal multivariante (ES, test)}}{17}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:lin_multivar_err}{{4.4}{17}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- Lineal multivariante (ES, test)}{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- Lineal multivariante (ES, test)}}{17}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:lin_multivar_pred}{{4.3}{17}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- Lineal multivariante (ES, test)}{figure.caption.9}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- Lineal multivariante (ES, test)}}{17}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:lin_multivar_err}{{4.4}{17}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- Lineal multivariante (ES, test)}{figure.caption.9}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Síntesis y comparación con el modelo de referencia}{17}{subsection.4.2.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Resultados de los modelos de regresión lineal -- España}}{17}{table.caption.9}\protected@file@percent }
-\newlabel{tab:linear}{{4.1}{17}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Resultados de los modelos de regresión lineal -- España}{table.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Resultados de los modelos de regresión lineal -- España}}{17}{table.caption.10}\protected@file@percent }
+\newlabel{tab:linear}{{4.1}{17}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Resultados de los modelos de regresión lineal -- España}{table.caption.10}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.3}Bloque 0 --- Modelos por país}{17}{section.4.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos XGBoost por país -- Bloque 0}}{18}{table.caption.10}\protected@file@percent }
-\newlabel{tab:bloque0}{{4.2}{18}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Comparativa de modelos XGBoost por país -- Bloque 0}{table.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos XGBoost por país -- Bloque 0}}{18}{table.caption.11}\protected@file@percent }
+\newlabel{tab:bloque0}{{4.2}{18}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Comparativa de modelos XGBoost por país -- Bloque 0}{table.caption.11}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}España}{18}{subsection.4.3.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (ES, test)}}{18}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:xgb_base_es}{{4.5}{18}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (ES, test)}{figure.caption.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (ES, test)}}{18}{figure.caption.11}\protected@file@percent }
-\newlabel{fig:xgb_ext_es}{{4.6}{18}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (ES, test)}{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (ES, test)}}{18}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:xgb_base_es}{{4.5}{18}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (ES, test)}{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (ES, test)}}{18}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:xgb_ext_es}{{4.6}{18}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (ES, test)}{figure.caption.12}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Francia}{18}{subsection.4.3.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (FR, test)}}{19}{figure.caption.12}\protected@file@percent }
-\newlabel{fig:xgb_base_fr}{{4.7}{19}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (FR, test)}{figure.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (FR, test)}}{19}{figure.caption.12}\protected@file@percent }
-\newlabel{fig:xgb_ext_fr}{{4.8}{19}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (FR, test)}{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (FR, test)}}{19}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:xgb_base_fr}{{4.7}{19}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (FR, test)}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (FR, test)}}{19}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:xgb_ext_fr}{{4.8}{19}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (FR, test)}{figure.caption.13}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Italia}{19}{subsection.4.3.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (IT, test)}}{19}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:xgb_base_it}{{4.9}{19}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (IT, test)}{figure.caption.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (IT, test)}}{19}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:xgb_ext_it}{{4.10}{19}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (IT, test)}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (IT, test)}}{19}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:xgb_base_it}{{4.9}{19}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost base (IT, test)}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (IT, test)}}{19}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:xgb_ext_it}{{4.10}{19}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- XGBoost ampliado (IT, test)}{figure.caption.14}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Importancia de variables}{19}{subsection.4.3.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (ES)}}{20}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:feat_es}{{4.11}{20}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (ES)}{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (FR)}}{20}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:feat_fr}{{4.12}{20}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (FR)}{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (IT)}}{20}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:feat_it}{{4.13}{20}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (IT)}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (ES)}}{20}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:feat_es}{{4.11}{20}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (ES)}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (FR)}}{20}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:feat_fr}{{4.12}{20}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (FR)}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (IT)}}{20}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:feat_it}{{4.13}{20}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- XGBoost ampliado (IT)}{figure.caption.16}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Síntesis del Bloque 0}{20}{subsection.4.3.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}Bloque 1 --- Modelo panel combinado}{21}{section.4.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos panel combinado por país -- Bloque 1}}{21}{table.caption.16}\protected@file@percent }
-\newlabel{tab:bloque1}{{4.3}{21}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Comparativa de modelos panel combinado por país -- Bloque 1}{table.caption.16}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.3}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos panel combinado por país -- Bloque 1}}{21}{table.caption.17}\protected@file@percent }
+\newlabel{tab:bloque1}{{4.3}{21}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Comparativa de modelos panel combinado por país -- Bloque 1}{table.caption.17}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}España}{21}{subsection.4.4.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (ES, test)}}{22}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:panel_base_es_pred}{{4.14}{22}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (ES, test)}{figure.caption.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (ES, test)}}{22}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:panel_ext_es_pred}{{4.15}{22}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (ES, test)}{figure.caption.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (ES, test)}}{22}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:panel_base_es_err}{{4.16}{22}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado base (ES, test)}{figure.caption.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (ES, test)}}{22}{figure.caption.17}\protected@file@percent }
-\newlabel{fig:panel_ext_es_err}{{4.17}{22}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado ampliado (ES, test)}{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (ES, test)}}{22}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:panel_base_es_pred}{{4.14}{22}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (ES, test)}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (ES, test)}}{22}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:panel_ext_es_pred}{{4.15}{22}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (ES, test)}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (ES, test)}}{22}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:panel_base_es_err}{{4.16}{22}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado base (ES, test)}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (ES, test)}}{22}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:panel_ext_es_err}{{4.17}{22}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado ampliado (ES, test)}{figure.caption.18}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Francia}{22}{subsection.4.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (FR, test)}}{23}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:panel_base_fr_pred}{{4.18}{23}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (FR, test)}{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.19}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (FR, test)}}{23}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:panel_ext_fr_pred}{{4.19}{23}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (FR, test)}{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.20}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (FR, test)}}{23}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:panel_base_fr_err}{{4.20}{23}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado base (FR, test)}{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.21}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (FR, test)}}{23}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:panel_ext_fr_err}{{4.21}{23}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado ampliado (FR, test)}{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (FR, test)}}{23}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:panel_base_fr_pred}{{4.18}{23}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (FR, test)}{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.19}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (FR, test)}}{23}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:panel_ext_fr_pred}{{4.19}{23}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (FR, test)}{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.20}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (FR, test)}}{23}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:panel_base_fr_err}{{4.20}{23}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado base (FR, test)}{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.21}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (FR, test)}}{23}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:panel_ext_fr_err}{{4.21}{23}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado ampliado (FR, test)}{figure.caption.19}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Italia}{23}{subsection.4.4.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.22}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (IT, test)}}{24}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:panel_base_it_pred}{{4.22}{24}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (IT, test)}{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.23}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (IT, test)}}{24}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:panel_ext_it_pred}{{4.23}{24}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (IT, test)}{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.24}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (IT, test)}}{24}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:panel_base_it_err}{{4.24}{24}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado base (IT, test)}{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.25}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (IT, test)}}{24}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:panel_ext_it_err}{{4.25}{24}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado ampliado (IT, test)}{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.22}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (IT, test)}}{24}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:panel_base_it_pred}{{4.22}{24}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado base (IT, test)}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.23}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (IT, test)}}{24}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:panel_ext_it_pred}{{4.23}{24}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel combinado ampliado (IT, test)}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.24}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado base (IT, test)}}{24}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:panel_base_it_err}{{4.24}{24}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado base (IT, test)}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.25}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel combinado ampliado (IT, test)}}{24}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:panel_ext_it_err}{{4.25}{24}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel combinado ampliado (IT, test)}{figure.caption.20}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}Importancia de variables}{25}{subsection.4.4.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.26}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel combinado base}}{25}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:panel_feat_base}{{4.26}{25}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- panel combinado base}{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.27}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel combinado ampliado}}{25}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:panel_feat_ext}{{4.27}{25}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- panel combinado ampliado}{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.26}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel combinado base}}{25}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:panel_feat_base}{{4.26}{25}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- panel combinado base}{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.27}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel combinado ampliado}}{25}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:panel_feat_ext}{{4.27}{25}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- panel combinado ampliado}{figure.caption.21}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.4.5}Síntesis del Bloque 1}{25}{subsection.4.4.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.5}Bloque 2 --- Panel con variable \emph  {geo} como feature}{26}{section.4.5}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos panel con geo como feature por país -- Bloque 2}}{26}{table.caption.21}\protected@file@percent }
-\newlabel{tab:bloque2}{{4.4}{26}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Comparativa de modelos panel con geo como feature por país -- Bloque 2}{table.caption.21}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.4}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos panel con geo como feature por país -- Bloque 2}}{26}{table.caption.22}\protected@file@percent }
+\newlabel{tab:bloque2}{{4.4}{26}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Comparativa de modelos panel con geo como feature por país -- Bloque 2}{table.caption.22}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}España}{26}{subsection.4.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.28}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (ES, test)}}{27}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:b2_base_es_pred}{{4.28}{27}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo base (ES, test)}{figure.caption.22}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.29}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (ES, test)}}{27}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:b2_ext_es_pred}{{4.29}{27}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (ES, test)}{figure.caption.22}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.30}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (ES, test)}}{27}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:b2_base_es_err}{{4.30}{27}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo base (ES, test)}{figure.caption.22}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.31}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (ES, test)}}{27}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:b2_ext_es_err}{{4.31}{27}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo ampliado (ES, test)}{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.28}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (ES, test)}}{27}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:b2_base_es_pred}{{4.28}{27}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo base (ES, test)}{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.29}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (ES, test)}}{27}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:b2_ext_es_pred}{{4.29}{27}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (ES, test)}{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.30}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (ES, test)}}{27}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:b2_base_es_err}{{4.30}{27}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo base (ES, test)}{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.31}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (ES, test)}}{27}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:b2_ext_es_err}{{4.31}{27}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo ampliado (ES, test)}{figure.caption.23}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Francia}{27}{subsection.4.5.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.32}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (FR, test)}}{28}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:b2_base_fr_pred}{{4.32}{28}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo base (FR, test)}{figure.caption.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.33}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (FR, test)}}{28}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:b2_ext_fr_pred}{{4.33}{28}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (FR, test)}{figure.caption.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.34}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (FR, test)}}{28}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:b2_base_fr_err}{{4.34}{28}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo base (FR, test)}{figure.caption.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.35}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (FR, test)}}{28}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:b2_ext_fr_err}{{4.35}{28}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo ampliado (FR, test)}{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.32}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (FR, test)}}{28}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:b2_base_fr_pred}{{4.32}{28}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo base (FR, test)}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.33}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (FR, test)}}{28}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:b2_ext_fr_pred}{{4.33}{28}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (FR, test)}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.34}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (FR, test)}}{28}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:b2_base_fr_err}{{4.34}{28}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo base (FR, test)}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.35}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (FR, test)}}{28}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:b2_ext_fr_err}{{4.35}{28}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo ampliado (FR, test)}{figure.caption.24}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5.3}Italia}{28}{subsection.4.5.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.36}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (IT, test)}}{29}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:b2_base_it_pred}{{4.36}{29}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo base (IT, test)}{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.37}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (IT, test)}}{29}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:b2_ext_it_pred}{{4.37}{29}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (IT, test)}{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.38}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (IT, test)}}{29}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:b2_base_it_err}{{4.38}{29}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo base (IT, test)}{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.39}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (IT, test)}}{29}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:b2_ext_it_err}{{4.39}{29}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo ampliado (IT, test)}{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.36}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo base (IT, test)}}{29}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:b2_base_it_pred}{{4.36}{29}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo base (IT, test)}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.37}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (IT, test)}}{29}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:b2_ext_it_pred}{{4.37}{29}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces PIB QoQ real vs predicción -- panel geo ampliado (IT, test)}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.38}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo base (IT, test)}}{29}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:b2_base_it_err}{{4.38}{29}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo base (IT, test)}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.39}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Errores de predicción -- panel geo ampliado (IT, test)}}{29}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:b2_ext_it_err}{{4.39}{29}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Errores de predicción -- panel geo ampliado (IT, test)}{figure.caption.25}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5.4}Importancia de variables}{30}{subsection.4.5.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.40}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel geo base}}{30}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:b2_base_imp}{{4.40}{30}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- panel geo base}{figure.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.41}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel geo ampliado}}{30}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:b2_ext_imp}{{4.41}{30}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- panel geo ampliado}{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.40}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel geo base}}{30}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:b2_base_imp}{{4.40}{30}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- panel geo base}{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.41}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Importancia de variables (gain) -- panel geo ampliado}}{30}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:b2_ext_imp}{{4.41}{30}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Importancia de variables (gain) -- panel geo ampliado}{figure.caption.26}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.5.5}Síntesis del Bloque 2}{30}{subsection.4.5.5}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {5}Aplicación web de visualización}{33}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -197,8 +199,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {5.1}Objetivo de la aplicación}{33}{section.5.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5.2}Arquitectura del sistema}{33}{section.5.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {5.3}Interfaz y funcionalidades}{33}{section.5.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Ficheros CSV leídos por la aplicación según el bloque activo}}{34}{table.caption.26}\protected@file@percent }
-\newlabel{tab:app_csvs}{{5.1}{34}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Ficheros CSV leídos por la aplicación según el bloque activo}{table.caption.26}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Ficheros CSV leídos por la aplicación según el bloque activo}}{34}{table.caption.27}\protected@file@percent }
+\newlabel{tab:app_csvs}{{5.1}{34}{\texorpdfstring {\xpg@aux {\xpg@current@opts }{\languagename }}{}\ignorespaces Ficheros CSV leídos por la aplicación según el bloque activo}{table.caption.27}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5.4}Decisiones técnicas}{34}{section.5.4}\protected@file@percent }
 \citation{*}
 \bibdata{bibliografia/bibliografia}
@@ -218,7 +220,7 @@
 \bibcite{stock_watson_2003}{{9}{{\APACyear {2003}}}{{Stock\ y{} Watson}}{{Stock\ y{} Watson}}}
 \bibcite{zhou_ensemble_2012}{{10}{{\APACyear {2012}}}{{Zhou}}{{Zhou}}}
 \bibstyle{apacite}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliografía}{37}{chapter*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliografía}{37}{chapter*.28}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{lol}{\addvspace {10\p@ }}

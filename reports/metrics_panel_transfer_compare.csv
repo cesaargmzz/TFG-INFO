@@ -1,0 +1,4 @@
+model,train_geos,geo,mae,rmse,n_features
+panel_transfer_ext,ES+FR,IT,0.31107167319213497,0.34419054084640327,6
+panel_transfer_ext,ES+IT,FR,0.22021933450466435,0.3624200677524335,6
+panel_transfer_ext,FR+IT,ES,0.3374182334154947,0.3669749698805616,6

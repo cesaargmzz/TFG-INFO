@@ -1,15 +1,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Indicadores macroeconómicos utilizados y sus fuentes en Eurostat}}{9}{table.caption.5}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Hiperparámetros del modelo XGBoost}}{12}{table.caption.6}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Indicadores macroeconómicos utilizados y sus fuentes en Eurostat}}{9}{table.caption.6}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Hiperparámetros del modelo XGBoost}}{12}{table.caption.7}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Resultados de los modelos de regresión lineal -- España}}{17}{table.caption.9}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos XGBoost por país -- Bloque 0}}{18}{table.caption.10}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos panel combinado por país -- Bloque 1}}{21}{table.caption.16}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos panel con geo como feature por país -- Bloque 2}}{26}{table.caption.21}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Resultados de los modelos de regresión lineal -- España}}{17}{table.caption.10}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos XGBoost por país -- Bloque 0}}{18}{table.caption.11}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos panel combinado por país -- Bloque 1}}{21}{table.caption.17}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Comparativa de modelos panel con geo como feature por país -- Bloque 2}}{26}{table.caption.22}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Ficheros CSV leídos por la aplicación según el bloque activo}}{34}{table.caption.26}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces \xpg@aux {}{spanish}\ignorespaces Ficheros CSV leídos por la aplicación según el bloque activo}}{34}{table.caption.27}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
