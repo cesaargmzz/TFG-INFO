@@ -16,3 +16,5 @@ data/processed/
 .ipynb_checkpoints/
 
 CLAUDE.md
+DESIGN.md
+FRONTEND_PLAN.md
