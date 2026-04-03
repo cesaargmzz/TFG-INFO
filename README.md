@@ -1,10 +1,11 @@
 <div align="center">
 
-<!-- Título animado con SVG -->
-<img src="https://readme-typing-svg.demolab.com?font=Manrope&weight=700&size=42&duration=3000&pause=1000&color=60A5FA&center=true&vCenter=true&width=500&height=80&lines=GDPulse" alt="GDPulse" />
+<img src="assets/banner.svg" alt="GDPulse Banner" width="100%"/>
+
+<br/>
 
 <p>
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=400&size=18&duration=4000&pause=800&color=94A3B8&center=true&vCenter=true&width=700&height=40&lines=Estimaci%C3%B3n+del+PIB+en+la+zona+euro+con+XGBoost;Espa%C3%B1a+%C2%B7+Francia+%C2%B7+Italia+%C2%B7+2009%E2%80%932025;Trabajo+de+Fin+de+Grado+%C2%B7+2026" alt="Subtítulo" />
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=400&size=16&duration=3500&pause=800&color=94A3B8&center=true&vCenter=true&width=700&height=35&lines=Modelos+base+%E2%86%92+Panel+combinado+%E2%86%92+Geo+features+%E2%86%92+Transferencia;MAE+m%C3%ADnimo+0.193+p.p.+en+Francia+%C2%B7+XGBoost+ext;8+trimestres+de+test%3A+2023Q4+%E2%80%93+2025Q3" alt="Subtítulo rotatorio" />
 </p>
 
 <br/>
@@ -163,8 +164,6 @@ TFG_INFO/
 │   ├── figures/          # Gráficas PNG
 │   └── *.csv             # Métricas y predicciones
 ├── memoria/              # LaTeX — TFG completo
-├── DESIGN.md
-├── FRONTEND_PLAN.md
 └── requirements.txt
 ```
 
