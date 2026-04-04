@@ -1,0 +1,135 @@
+.kpi-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* ── Banner Bloque 3 ──────────────────────────────── */
+.kpi-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: rgba(124, 92, 191, 0.08);
+  border-left: 3px solid var(--secondary);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-5);
+  font-family: var(--font-ui);
+  font-size: var(--text-body);
+  color: var(--on-surface);
+}
+
+.kpi-banner__icon {
+  color: var(--secondary);
+  font-size: 1rem;
+}
+
+.kpi-banner strong {
+  color: var(--secondary);
+}
+
+/* ── Grid ─────────────────────────────────────────── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+/* ── Animación entrada ────────────────────────────── */
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Card base ────────────────────────────────────── */
+.kpi-card {
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  animation: cardIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.kpi-card:nth-child(1) { animation-delay: 0ms; }
+.kpi-card:nth-child(2) { animation-delay: 100ms; }
+.kpi-card:nth-child(3) { animation-delay: 200ms; }
+.kpi-card:nth-child(4) { animation-delay: 300ms; }
+
+.kpi-card__label {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.kpi-card__value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: var(--weight-bold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.kpi-card__sub {
+  font-family: var(--font-ui);
+  font-size: var(--text-label);
+  margin-top: var(--space-1);
+}
+
+/* ── Variante lila (Modelo) ───────────────────────── */
+.kpi-card--lila {
+  background: rgba(124, 92, 191, 0.08);
+}
+
+.kpi-card--lila .kpi-card__label {
+  color: var(--secondary);
+}
+
+.kpi-card--lila .kpi-card__value {
+  color: var(--secondary);
+}
+
+.kpi-card--lila .kpi-card__sub {
+  color: rgba(124, 92, 191, 0.6);
+}
+
+/* ── Variante oscura (MAE / RMSE) ─────────────────── */
+.kpi-card--dark {
+  background: linear-gradient(135deg, #1a1b2e 0%, #252640 100%);
+}
+
+.kpi-card--dark .kpi-card__label {
+  color: rgba(232, 234, 246, 0.5);
+}
+
+.kpi-card--dark .kpi-card__value {
+  color: #a5b8f8;
+}
+
+.kpi-card--dark .kpi-card__sub {
+  color: rgba(232, 234, 246, 0.3);
+}
+
+/* ── Variante azul (Variables) ────────────────────── */
+.kpi-card--blue {
+  background: rgba(59, 111, 232, 0.08);
+}
+
+.kpi-card--blue .kpi-card__label {
+  color: var(--primary);
+}
+
+.kpi-card--blue .kpi-card__value {
+  color: var(--primary);
+}
+
+.kpi-card--blue .kpi-card__sub {
+  color: rgba(59, 111, 232, 0.6);
+}

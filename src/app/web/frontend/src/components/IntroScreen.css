@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Inter:wght@400;500&display=swap');
-
 /* ── Raíz ────────────────────────────────────────── */
 .intro {
   position: fixed;
@@ -145,16 +143,3 @@
   100% { opacity: 0; transform: rotate(45deg) translate(4px,  4px);  }
 }
 
-/* ── Fade final ───────────────────────────────────── */
-.intro__fadeout {
-  position: absolute;
-  inset: 0;
-  background: #000;
-  animation: fullFade 0.8s ease forwards;
-  pointer-events: none;
-}
-
-@keyframes fullFade {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}

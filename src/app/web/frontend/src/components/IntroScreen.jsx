@@ -1,16 +1,14 @@
-import { useState, useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import EarthScene from './EarthScene'
 import './IntroScreen.css'
 
 export default function IntroScreen({ onEnter }) {
-  const [fadeOut, setFadeOut] = useState(false)
   const overlayRef  = useRef(null)
   const hintRef     = useRef(null)
   const contentRef  = useRef(null)
 
   const handleComplete = () => {
-    setFadeOut(true)
-    setTimeout(onEnter, 800)
+    setTimeout(onEnter, 100)
   }
 
   // Fade-in del texto tras la animación de entrada (0.4s delay + 1.2s duración)
@@ -53,7 +51,6 @@ export default function IntroScreen({ onEnter }) {
         <p>Desplaza para continuar</p>
       </div>
 
-      {fadeOut && <div className="intro__fadeout" />}
     </div>
   )
 }

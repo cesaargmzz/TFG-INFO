@@ -1,0 +1,50 @@
+.chart-card {
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-ambient);
+  overflow: hidden;
+}
+
+.chart-card__header {
+  padding: var(--space-6) var(--space-8) var(--space-4);
+}
+
+.chart-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-headline);
+  font-weight: var(--weight-bold);
+  color: var(--on-surface);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-1);
+}
+
+.chart-card__sub {
+  font-family: var(--font-ui);
+  font-size: var(--text-label);
+  color: var(--on-surface-variant);
+  margin: 0;
+}
+
+.chart-card__body {
+  padding: var(--space-4) var(--space-8) var(--space-8);
+}
+
+/* ── Tooltip ──────────────────────────────────────── */
+.chart-tooltip {
+  background: var(--surface-container-lowest);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-float);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-ui);
+  font-size: var(--text-body);
+  color: var(--on-surface);
+}
+
+.chart-tooltip__label {
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-label);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
